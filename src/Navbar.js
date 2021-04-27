@@ -39,7 +39,7 @@ export default function NavBar() {
                 <Navbar.Brand className={classes.title} href="/"><img src={logo} alt='logo'/></Navbar.Brand>
                 <Navbar.Toggle  aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse bg="light" variant="light" id="responsive-navbar-nav">
-                    <Nav className='my-lg-0' className={classes.root1} >
+                    <Nav  className={classes.root1} >
                     <Nav.Link ><Link to='/' id="navLink" >Головна</Link></Nav.Link>
                     <Nav.Link ><Link to='' id="navLink" >Для громадян</Link></Nav.Link> 
                     <Nav.Link ><Link to='/PageForNotary' id="navLink">Для нотаріусів</Link></Nav.Link> 
