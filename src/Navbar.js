@@ -7,7 +7,6 @@ import {makeStyles} from '@material-ui/core/styles'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Nav,  Navbar} from 'react-bootstrap';
 import {
-  BrowserRouter as Router,
   Link
 } from "react-router-dom";
 
