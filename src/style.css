@@ -1,0 +1,56 @@
+#bg{
+    background: #dec8ba url('./img/mainPict.jpg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 1279px;
+}
+#bg1{
+    background: #dec8ba url('./img/bgReg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 1279px;
+    justify-content: center;
+}
+#bg2{
+    background: #dec8ba url('./img/bgReg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 1279px;
+    justify-content: center;
+}
+#bg3{
+    background: #dec8ba url('./img/bgReg1.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 593px;
+    justify-content: center;
+}
+
+#navbar{
+    background: rgba(50, 88, 163, 0);
+    box-shadow: 0 0 0 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#navLink{
+    color: white;
+    
+}
+#hummer{
+    background: #1b1a11 url('./img/hummer.png') center no-repeat;
+    background-size: cover;
+    min-height: 467px;
+}
+#footer{
+    background-color: #333333;
+    min-height: 80px;
+}
+#bgReg{
+    background: #dec8ba url('./img/bgReg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 1279px;
+}
+
+
