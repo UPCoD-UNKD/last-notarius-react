@@ -1,5 +1,4 @@
 import React from 'react'
-import Map from './Map'
 import download from './img/application.png'
 
 import { makeStyles } from '@material-ui/core/styles';
