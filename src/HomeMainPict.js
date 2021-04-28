@@ -4,7 +4,7 @@ import download from './img/application.png'
 import { makeStyles } from '@material-ui/core/styles';
 import './style.css'
 import { Typography } from '@material-ui/core';
-
+import Map from './Map'
 const useStyles = makeStyles((theme) => ({
     contentH: {
         paddingTop: theme.spacing(70),
@@ -24,7 +24,7 @@ export default function HomeMainPict() {
             <div style={{ display: 'flex', justifyContent: "space-around", flexWrap: 'wrap'}}>
 
             <div > <img src={download} alt="download"/> <span></span> </div>
-            <div style={{width:"50%", height:"50%"}}></div>
+            <div style={{width:"50%", height:"50%"}}><Map/></div>
             <div style={{ maxWidth: 250}}>
                 <div style={{  height: 40, display: 'flex' }}>
                 <p style={{fontSize: 24, fontWeight: 500}}>1230<span style={{fontSize: 16, fontWeight: 400}}>нотаріусів</span></p>
