@@ -80,7 +80,7 @@ export default function Map() {
       
       <WrappedMap
       googleMapURL = {`https://maps.googleapis.com/maps/api/js?v=3.exp&
-      libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+      libraries=geometry,drawing,places&key=AIzaSyAYmININuJX66j2ZHZUhR8YKnPqid43Vh0`}
       loadingElement = {<div style={{width: "400px", height: `100%` }}/>}
       containerElement= {<div style={{ width: "400px", height: `400px` }} />}
       mapElement= {<div style={{ width: "400px", height: `100%` }} />}
