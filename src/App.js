@@ -1,35 +1,32 @@
-import React from 'react'
-import NavBar from './Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import HomePage from './HomePage'
-import PageForNotary from './PageForNotary'
-import RegPage from './RegPage'
-import LogInPage from './LogInPage'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-export default function App() {
+import "./App.css";
+
+import Header from "./components/Header/Header.jsx";
+import Home from "./components/Home/Home";
+
+import PersonalOffice from './components/PersonalOffice/PersonalOffice';
+
+// import About from './About/About';
+import Footer from "./components/Footer/Footer";
+// import NotFound from './NotFound/NotFound';
+
+export const App = () => {
   return (
-    <>
-    <Router>
-      <NavBar/>
-      <Switch>
-          <Route exact path="/" component={HomePage}/>
-          <Route exact path="/PageForNotary" component={PageForNotary}/>
+    <div className="app_wrapper">
+      <Header />
+      {/* <Home/> */}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/personal_office" element={<PersonalOffice />} />
          
-         
-              
-      </Switch>
-      <Switch>
-          <Route  path ="/RegPage" component={RegPage}/>  
-          <Route  path ="/LogInPage" component={LogInPage}/>   
-      </Switch>
-    </Router>
-    </>
-      
-    
-  )
-}
+          {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
