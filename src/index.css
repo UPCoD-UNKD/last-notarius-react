@@ -18,6 +18,78 @@ code {
 
 
 @tailwind base;
+
+@layer base {
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #b3bbff #1a66ff;
+  }
+
+   /* Chrome, Edge, and Safari */
+  /* *::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #1a66ff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #b3bbff;
+    border-radius: 10px;
+    border: 1px solid #878787;
+  }*/
+
+  html {
+    @apply scroll-smooth;
+  }
+
+
+   /* scrollbar: root, ... w-[10px] bg-transparent*/
+   .custom__scrollbar::-webkit-scrollbar,
+  html::-webkit-scrollbar,
+  #popupForms::-webkit-scrollbar {
+    @apply w-[7px]  bg-blue-800;
+  }
+
+  html::-webkit-scrollbar-thumb,
+  .custom__scrollbar::-webkit-scrollbar-thumb,
+  #popupForms::-webkit-scrollbar-thumb{
+    @apply rounded-full bg-slate-400 border  border-slate-600 ;
+  }
+
+  .custom__scrollbar2::-webkit-scrollbar {
+    @apply w-2  bg-transparent;
+  }
+  .custom__scrollbar2::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-blue-600 border-2 border-slate-600;
+  }
+
+}
+
+
 @tailwind components;
+
+@layer components {
+  .active {
+    @apply border-b-2 border-b-blue-400 transition-all;
+  }
+
+}
+
 @tailwind utilities;
 
+ /*.nav-active {
+ border-radius: 4px;
+  border-bottom: 2px solid rgb(255, 0, 0);
+ background-color: #fff;
+  color: white;
+
+  transform: scale(1.1);
+  transition: 0.5s;
+
+ box-shadow: rgb(0 39 182 / 38%) 1px 2px 20px 3px,
+    rgb(0 0 0 / 61%) 0px 24px 13px -4px inset;
+}*/
