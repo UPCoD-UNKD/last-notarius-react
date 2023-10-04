@@ -5,8 +5,11 @@ const Header = () => {
     <header class="bg-blue-800 py-3">
       <div class="px-10 ">
         <div class="flex items-center ">
-          <NavLink href="/"  class="text-2xl text-white font-bold ">
-           е-Нотаріус
+          <NavLink href="/" class="border-b border-b-transparent" >
+            <span  class="text-2xl text-white font-bold  ">
+            е-Нотаріус
+            </span>
+     
           </NavLink>
 
           <div class="ml-60 flex gap-10 text-white ">
