@@ -14,19 +14,61 @@ import axios from "axios";
 
 import Datas from "../Datas";
 import Pagination from "../Pagination";
+import SearchForm from "../SearchForn";
 
 
 
 
 const optionsBrand = [
   { value: "products", label: "Регіон" },
-  { value: "Apple", label: "Apple" },
-  { value: "Samsung", label: "Samsung" },
-  { value: "OPPO", label: "OPPO" },
+  { value: "Apple", label: "Херсонська обл." },
+  { value: "Samsung", label: "Волинська обл." },
+  { value: "OPPO", label: "Київська обл." },
 ];
 const optionsCategory = [
-  { value: "products", label: "Місто" },
-  { value: "smartphones", label: "Category" },
+  { value: "products", label: "Вид нотаріальної діяльності" },
+  { value: "smartphones", label: "Іванівська державна нотаріальна контора" },
+  { value: "4.44", label: "Іваничівська державна нотаріальна контора" },
+ 
+ 
+];
+const optionsKind = [
+  { value: "products", label: "Вид нотаріальної діяльності" },
+  { value: "smartphones", label: "смт." },
+  { value: "4.44", label: "м." },
+ 
+ 
+];
+
+// const optionsRating = [
+//   { value: "products", label: "Рейтинг користувачів" },
+//   { value: "smartphones", label: "3" },
+//   { value: "4.44", label: "4" },
+ 
+ 
+// ];
+
+const optionsExperience = [
+  { value: "products", label: "Досвід роботи" },
+  { value: "smartphones", label: "5" },
+  { value: "4.44", label: "10" },
+ 
+ 
+];
+
+const optionsLanguages = [
+  { value: "products", label: "Мови спілкування" },
+  { value: "smartphones", label: "Українська" },
+  { value: "4.44", label: "Англійська" },
+ 
+ 
+];
+
+
+
+const optionsAccessibility = [
+  { value: "products", label: "Доступність для інвалідів" },
+  { value: "smartphones", label: "Падус в наявності" },
   { value: "4.44", label: "Rating" },
  
  
@@ -151,7 +193,7 @@ console.log(selectedCategory);
   bg-hero-pattern    bg-cover bg-center bg-no-repeat  "
       >
         {/* onsubmit="return validateForm()" method="post" */}
-        <form class="relative" name="myForm" action="/action_page.php">
+        {/* <form class="relative" name="myForm" action="/action_page.php">
           <input
             type="text"
             name="fname"
@@ -163,7 +205,8 @@ console.log(selectedCategory);
             placeholder="Пошук"
             class="placeholder:text-slate-600 absolute bg-[#F0CA00]  top-0 right-0 h-full w-[70px] rounded-r-full"
           />
-        </form>
+        </form> */}
+        <SearchForm/>
       </section>
 
       <section class="bg-slate-200 min-h-[calc(100vh-200px)] w-full py-10">
@@ -221,22 +264,107 @@ console.log(selectedCategory);
 
               {/* <MyComponent  /> */}
               <Select
+              styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  borderColor: state.isFocused ? 'transparent' : 'transparent',
+                  
+                }),
+            
+              }}
+              class={{
+                control: (state) =>
+                  state.isFocused ? 'border-red-600' : 'border-grey-300',
+              }}
                 options={optionsBrand}
-                value={selectedBrand || 'products'}
+                value={selectedBrand }
                 onChange={handleSelectChangeBrand}
                 isMulti={false} // Set to true if you want to allow multiple selections
                 //  placeholder="Select an option..."
                 placeholder="Регіон"
               />
+              {/* unstyled */}
               <Select
-              class=""
+               styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  borderColor: state.isFocused ? 'transparent' : 'transparent',
+                }),
+              }}
                 options={optionsCategory}
-                value={selectedCategory || 'products'}
+                value={selectedCategory }
                 onChange={handleSelectChangeCategory}
                 isMulti={false} // Set to true if you want to allow multiple selections
                 //  placeholder="Select an option..."
                 placeholder="Місто"
               />
+
+              <Select
+              styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  borderColor: state.isFocused ? 'transparent' : 'transparent',
+                }),
+              }}
+                options={optionsKind}
+                value={optionsKind }
+                onChange={handleSelectChangeCategory}
+                isMulti={false} // Set to true if you want to allow multiple selections
+                //  placeholder="Select an option..."
+                placeholder="Вид нотаріальної діяльності"
+              />
+              {/* <Select
+              class=""
+                options={optionsRating}
+                value={optionsRating }
+                onChange={handleSelectChangeCategory}
+                isMulti={false} // Set to true if you want to allow multiple selections
+                //  placeholder="Select an option..."
+                placeholder="Рейтинг користувачів"
+              /> */}
+              <Select
+               styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  borderColor: state.isFocused ? 'transparent' : 'transparent',
+                }),
+              }}
+                options={optionsExperience}
+                value={optionsExperience }
+                onChange={handleSelectChangeCategory}
+                isMulti={false} // Set to true if you want to allow multiple selections
+                //  placeholder="Select an option..."
+                placeholder="Досвід роботи"
+              />
+              <Select
+               styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  borderColor: state.isFocused ? 'transparent' : 'transparent',
+                }),
+              }}
+                options={optionsLanguages}
+                value={optionsLanguages }
+                onChange={handleSelectChangeCategory}
+                isMulti={false} // Set to true if you want to allow multiple selections
+                //  placeholder="Select an option..."
+                placeholder="Мови спілкування"
+              />
+              <Select
+               styles={{
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  borderColor: state.isFocused ? 'transparent' : 'transparent',
+                }),
+              }}
+                options={optionsAccessibility}
+                value={optionsAccessibility }
+                onChange={handleSelectChangeCategory}
+                isMulti={false} // Set to true if you want to allow multiple selections
+                //  placeholder="Select an option..."
+                placeholder="Доступність для інвалідів"
+              />
+             
 
             
             </div>
