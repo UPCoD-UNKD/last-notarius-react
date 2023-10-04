@@ -7,7 +7,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('./images/hero-1280@2x.jpg')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+      }
+    },
+    
   },
   fontFamily: {
     sans: ["'Inter Variable'", ...defaultTheme.fontFamily.sans],
