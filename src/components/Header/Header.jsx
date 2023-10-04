@@ -5,20 +5,21 @@ const Header = () => {
     <header class="bg-blue-800 py-3">
       <div class="px-10 ">
         <div class="flex items-center ">
-          <NavLink href="/">
-            <h2 class="text-2xl text-white font-bold ">е-Нотаріус</h2>
+          <NavLink href="/"  class="text-2xl text-white font-bold ">
+           е-Нотаріус
           </NavLink>
 
           <div class="ml-60 flex gap-10 text-white ">
-            <NavLink to="/">
-              <span class="border-b-2 border-blue-500 hover:text-white/50 transition-all">
+            <NavLink to="/" class="active  hover:text-white/50 transition-all">
+              {/* border-b-2 border-blue-500 */}
+            
                 Головна
-              </span>
+             
             </NavLink>
-            <NavLink to="/personal_office">
-              <span class="border-b-2 border-blue-500 hover:text-white/50 transition-all">
+            <NavLink to="/personal_office" class=" hover:text-white/50 transition-all">
+             
                 Персональний кабінет
-              </span>
+              
             </NavLink>
           </div>
         </div>
