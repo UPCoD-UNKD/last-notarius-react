@@ -4,12 +4,12 @@ import React from 'react';
 // export default function SearchBasicExample(): JSX.Element {
 export default function SearchForm() {
     return (
-            <div class=" md:w-96 ">
+            <div class="w-full sm:w-[500px]  ">
                 <div class="relative  flex w-full flex-wrap items-stretch  ">
                     {/* rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding -mr-0.5 block focus:border-primary dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary*/}
                     <input
                         type="search"
-                        class="relative rounded-l-full m-0  w-[1px] min-w-0 flex-auto  px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none  active:outline-none "
+                        class="relative rounded-l-full m-0  w-[1px] min-w-0 flex-auto  px-5 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none  active:outline-none "
                         placeholder="Пошук"
                         aria-label="Пошук"
                         aria-describedby="button-addon1" />
@@ -18,7 +18,8 @@ export default function SearchForm() {
                     {/* <TERipple color='light'> */}
                     {/* rounded-r bg-primary text-xs font-medium uppercase leading-tight text-white*/}
                     <button
-                        class="relative rounded-r-full bg-[#F0CA00]  z-[2] flex items-center   px-6 py-2.5  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                        class="relative rounded-r-full bg-[#F0CA00]  z-[2] flex items-center  p-3 lg:px-5 py-2.5 
+                         shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
                         type="button"
                         id="button-addon1">
                         <svg

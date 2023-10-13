@@ -1,7 +1,8 @@
 import React  from "react";
 import { NavLink } from "react-router-dom";
-import IconTelegram from "./icons/IconTelegram";
-import IconViber from "./icons/IconViber";
+import IconTelegram from "../src/components/icons/iconTelegram";
+
+import IconViber from "../src/components/icons/IconViber";
 
 const Datas = ({ datas, loading, filteredData }) => {
   if (loading) {
@@ -142,7 +143,8 @@ const Datas = ({ datas, loading, filteredData }) => {
                   </div>
 
                   <div class="flex gap-5">
-                    <IconTelegram />
+                    {/* <IconTelegram /> */}
+                    <IconTelegram/>
                     <IconViber />
                   </div>
 

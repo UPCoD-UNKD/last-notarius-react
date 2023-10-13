@@ -2,7 +2,7 @@ const IconTelegram = () =>{
 
     return(
         <svg
-        class="w-8 h-8"
+        class="w-8 h-8 hover:scale-110 transition-all"
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"
