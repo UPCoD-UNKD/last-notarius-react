@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
-
+@import-normalize;
 
 
 body {
@@ -67,6 +67,9 @@ code {
     @apply rounded-full bg-blue-600 border-2 border-slate-600;
   }
 
+  .lockBody {
+    @apply max-h-screen overflow-hidden lg:mr-[7px];
+  }
 }
 
 
@@ -76,6 +79,33 @@ code {
   .active {
     @apply border-b-2 border-b-blue-400 transition-all;
   }
+  .active-paginations {
+    @apply bg-blue-400 text-white transition-all;
+  }
+
+
+
+    /*============== border-style =============== */
+    .border__top {
+    @apply border-t-[1px] border-t-black/50;
+  }
+
+  .border__left {
+    @apply border-l-[1px] border-l-black/50;
+  }
+
+  .border__right {
+    @apply border-r border-r-black/50;
+  }
+
+  .border__bottom {
+    @apply border-b-[1px] border-b-black/50;
+  }
+
+  .border__rounded {
+    @apply rounded-full border-[1px] border-black/50;
+  }
+
 
 }
 
@@ -93,3 +123,6 @@ code {
  box-shadow: rgb(0 39 182 / 38%) 1px 2px 20px 3px,
     rgb(0 0 0 / 61%) 0px 24px 13px -4px inset;
 }*/
+
+/*.swiper-slide { width: 80% }*/
+

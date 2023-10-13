@@ -2,6 +2,7 @@ const IconViber = () =>{
 
     return(
       <svg
+      class="hover:scale-110 transition-all"
       xmlns="http://www.w3.org/2000/svg"
       width="37"
       height="37"
