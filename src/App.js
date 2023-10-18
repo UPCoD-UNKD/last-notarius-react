@@ -13,28 +13,31 @@ import Header from "./components/widgets/Header.jsx";
 
 // import About from './About/About';
 import Footer from "./components/widgets/Footer";
-import Notarius from "./page/Notarius";
+// import Notarius from "./page/Notarius";
+import Home from "./page/Home";
 import NotariusPersonalOffice from "./page/NotariusPersonalOffice";
 import ForСitizens from "./page/ForСitizens";
 import ForNotaries from "./page/ForNotaries";
 import NotarialActs from "./page/NotarialActs";
+import Hero from "./components/widgets/Hero";
 // import NotFound from './NotFound/NotFound';
 
 export const App = () => {
 
   const products = datafake.products;
   return (
-    <div className="app_wrapper">
+    <div className="app_wrapper relative">
       <Header />
       {/* <Home/> */}
-
+        <Hero/>
       <Routes>
       {/* <Router> */}
         {/* <Switch> */}
           {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/notarius" element={<Notarius />} />
           <Route path="/notarius/:id" element={<NotariusPersonalOffice products={products} />} /> */}
-          <Route path="/" element={<Notarius />} />
+          {/* <Route path="/" element={<Notarius />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/:id" element={<NotariusPersonalOffice products={products} />} />
           
           <Route path="/forcitizens" element={<ForСitizens />} />
