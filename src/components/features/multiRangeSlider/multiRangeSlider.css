@@ -35,7 +35,8 @@ padding-left: 10px;
 
 .slider__range {
   /*background-color: #9fe5e1;*/
-  background-color: #607dbe;
+  /*background-color: #607dbe;*/
+  background-color: #9D7558;
   z-index: 2;
 }
 
@@ -82,7 +83,8 @@ padding-left: 10px;
 /* For Chrome browsers */
 .thumb::-webkit-slider-thumb {
   /*background-color: #f1f5f7;*/
-  background-color: #c0d5ff;
+  /*background-color: #c0d5ff;*/
+  background-color: #9D7558;
   border: none;
   border-radius: 50%;
   /*box-shadow: 0 0 1px 1px #ced4da;*/
