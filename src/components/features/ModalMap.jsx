@@ -1,9 +1,9 @@
 const ModalMap = ({ setIsOpen }) => {
   return (
     <>
-    {/* blur-[10px] */}
+    {/* blur-[10px] bottom-[-400px]*/}
       <div
-        class="absolute top-0 bottom-[-400px] left-0  z-[5] bg-black/50  w-full "
+        class="absolute top-0  left-0  z-[5] bg-black/50  w-full h-full"
         onClick={() => {
             // document.body.classList.toggle("lockBody")
             setIsOpen(false)}}

@@ -100,7 +100,7 @@ const DatasNotarius = ({
             // grid lg:grid-cols-[60%_1fr] lg:grid-rows-[1fr_auto]
             <li
               key={id}
-              class="pl-5  grid lg:grid-cols-[70%_1fr] justify-between py-7 bg-white lg:py-8 border-l  border-l-slate-400 border-t border-t-slate-400 "
+              class="pl-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5 border-l  border-l-slate-400 border-t border-t-slate-400 "
             >
               <div class="">
                 <div class="flex gap-4 lg:gap-8 xl:gap-9 ">

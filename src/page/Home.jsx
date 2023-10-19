@@ -292,7 +292,7 @@ const Home = () => {
   return (
     // relative top-[56px]
     <main class="mt-[-72px] ">
-      <section class="bg-white  min-h-[calc(100vh-200px)] w-full py-5 lg:py-[44px] ">
+      <section class="bg-white  min-h-[calc(100vh-200px)] w-full py-5 lg:py-[44px] lg:pb-[66px] ">
         <Container>
           <div class="grid xl:grid-cols-[35%_1fr] gap-4 xl:gap-0 ">
             <div
@@ -329,7 +329,7 @@ const Home = () => {
               <h2 class="text-[20px] font-semibold border-l-4 border-l-accent1 pl-[24px]">
                 Вибір категорій
               </h2>
-              <div class="px-[40px] text-[14px] mt-[36px]">
+              <div class="px-[30px] text-[14px] mt-[26px]">
                 <Select
                   styles={{
                     control: (baseStyles, state) => ({

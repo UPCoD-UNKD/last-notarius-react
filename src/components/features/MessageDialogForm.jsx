@@ -62,9 +62,9 @@ const MessageDialogForm = () => {
      <Swiper
      class="   "
     style={{
-      "--swiper-pagination-color": "#FFBA08",
+      "--swiper-pagination-color": "#9D7558",
       // "--swiper-pagination-bullet-inactive-color": "#999999",
-      "--swiper-pagination-bullet-inactive-color": "#607dbe",
+      "--swiper-pagination-bullet-inactive-color": "#D9D9D9",
       "--swiper-pagination-bullet-inactive-opacity": "1",
       "--swiper-pagination-bullet-size": "16px",
       "--swiper-pagination-bullet-horizontal-gap": "6px",
@@ -101,7 +101,8 @@ const MessageDialogForm = () => {
       onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
-      <div class="lg:w-[400px] lg:h-[180px] shadow-xl border p-4 rounded-[20px]">
+        {/* shadow-xl */}
+      <div class="lg:w-[400px] lg:h-[180px]  border-2 p-4 rounded-[20px]">
           
           <h5 class="mb-4 text-xl font-semibold">Maria Smantha</h5>
           
@@ -125,7 +126,7 @@ const MessageDialogForm = () => {
        
       </SwiperSlide>
   <SwiperSlide>
-  <div class="lg:w-[400px] lg:h-[180px] shadow-xl border p-4 rounded-[20px]">
+  <div class="lg:w-[400px] lg:h-[180px] border-2 p-4 rounded-[20px]">
           
           <div class="">
             <h5 class="mb-4 text-xl font-semibold">Lisa Cudrow</h5>
@@ -150,7 +151,7 @@ const MessageDialogForm = () => {
 {comments.map((text) => (
   
   <SwiperSlide>
-            <div class="lg:w-[400px] lg:h-[180px] h-[180px]   shadow-xl border p-4 rounded-[20px] overflow-y-hidden ">
+            <div class="lg:w-[400px] lg:h-[180px] h-[180px]   border-2 p-4 rounded-[20px] overflow-y-hidden ">
               <h5 class="mb-4 text-xl font-semibold break-words">{name}</h5>
 
 
@@ -184,8 +185,8 @@ const MessageDialogForm = () => {
 
        
       
-
-      <div class="block py-10 lg:max-w-[60%] mt-10 rounded-lg bg-white lg:p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ">
+{/* shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]   dark:bg-neutral-700  */}
+      <div class="block py-10 lg:max-w-[60%] mt-10 rounded-lg bg-white lg:p-6 mx-auto">
         {/* onSubmit={handleSubmit} */}
 
         <form>
@@ -199,7 +200,7 @@ const MessageDialogForm = () => {
                onChange={handleChangeName}
                 type="text"
                 name="name"
-                class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+                class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-600 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
                 placeholder="Ваше ім'я"
                 // value={inputs.username || ""}
                 // onChange={handleChange}
@@ -209,7 +210,7 @@ const MessageDialogForm = () => {
            
 
             <textarea
-              class="mt-2 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+              class="mt-2 px-3 py-2 bg-white border shadow-sm border-slate-600 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
               // value={textarea}
               // onChange={handleChangeText}
               value={comment}
@@ -218,9 +219,10 @@ const MessageDialogForm = () => {
               placeholder="Текст відгука"
             />
           </div>
+          {/* shadow-[0_4px_9px_-4px_#3b71ca]  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]   dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]*/}
           <button
             type="submit"
-            class="inline-block mt-5 rounded bg-[#2d69ff] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+            class="inline-block mt-5 rounded-full bg-accent1 px-6 lg:px-10 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white  transition duration-150 ease-in-out hover:bg-accent1/70  focus:bg-accent1/70  focus:outline-none focus:ring-0 active:bg-primary-700  "
             // data-te-ripple-init
             // data-te-ripple-color="light"
             onClick={hendleClik}
