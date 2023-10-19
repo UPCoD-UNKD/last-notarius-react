@@ -60,10 +60,10 @@ const Header = () => {
   return (
     // fixed w-full z-10  bg-blue-800 bg-gradient-to-b from-[#1E40AF] via-[#1E40AF] to-[#0E1D82]
     //  
-    <header   class={` sticky top-0  w-full z-[10] bg-black/10 backdrop-blur-[100px]  transition duration-[1000ms] ease-in-out 
+    <header   class={` sticky top-0  w-full z-[10] bg-black/30 backdrop-blur-[10px]  transition duration-[1000ms] ease-in-out 
      
 
-    ${!show ? "-translate-y-[150%] bg-black/10  " : ""}
+    ${!show ? "-translate-y-[150%] bg-black/50  " : ""}
      
      
      `}>

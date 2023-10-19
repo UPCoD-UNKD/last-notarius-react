@@ -15,7 +15,7 @@ const Footer = () => {
             <img width={200} height={30} src={logo} alt="logo" />
           </Link>
 
-          <div class="flex gap-10 text-[9px] xl:pt-[5px] ">
+          <div class="flex gap-10 text-[9px] xl:pt-[15px] ">
           {/* lg:flex-row lg:mx-auto pt-5 cursor-pointer max-w-max gap-3 lg:gap-10 */}
           <ul class="flex flex-col gap-5">
             <li class="  ">НОВІГАЦІЯ</li>

@@ -31,14 +31,14 @@ const ForNotaries = () => {
   // } = datasNotar
  
   return (
-    <div class="bg-white text-center text-xl font-semibold h-[calc(100vh-200px)] w-full py-10">
+    <section class="bg-white mt-[-72px] text-center text-xl font-semibold h-[calc(100vh-200px)] w-full py-10">
     <div class="px-10 " >
-   <h2 class=" border-b border-b-black/50 pb-5">Для нотаріусів
+   <h2 class=" border__bottom pb-5">Для нотаріусів
 </h2>
    </div>
 
    
- </div>
+ </section>
   );
 };
 

@@ -297,7 +297,7 @@ const NotariusPersonalOffice = ({ products }) => {
             <div class="lg:grid  lg:grid-cols-2">
               <p class="mt-5 ">Нотаріус здійснює нотаріальні дії:</p>
 
-              <ul class="marker:text-sky-400 list-disc pl-5 space-y-3 mt-5 ">
+              <ul class="marker:text-black/30 list-disc pl-5 space-y-3 mt-5 ">
                 <li>
                   Робочі дні: з {" 08:00"} до {"19:00"}
                 </li>

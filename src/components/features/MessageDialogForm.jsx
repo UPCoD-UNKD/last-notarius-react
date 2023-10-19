@@ -200,7 +200,7 @@ const MessageDialogForm = () => {
                onChange={handleChangeName}
                 type="text"
                 name="name"
-                class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-600 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+                class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-400 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
                 placeholder="Ваше ім'я"
                 // value={inputs.username || ""}
                 // onChange={handleChange}
@@ -210,7 +210,7 @@ const MessageDialogForm = () => {
            
 
             <textarea
-              class="mt-2 px-3 py-2 bg-white border shadow-sm border-slate-600 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+              class="mt-2 px-3 py-2 bg-white border shadow-sm border-slate-400 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
               // value={textarea}
               // onChange={handleChangeText}
               value={comment}
