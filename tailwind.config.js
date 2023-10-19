@@ -35,6 +35,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('./images/hero-01-1280@2x.jpg')",
+        'pesonal-office': "url('./images/perconal-office-1280@2x.jpg')",
         // 'footer-texture': "url('/img/footer-texture.png')",
       },
 
