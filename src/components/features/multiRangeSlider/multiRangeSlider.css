@@ -11,7 +11,7 @@ padding-left: 10px;
 
 .slider {
   position: relative;
-  width: 200px;
+  width: 270px;
 }
 
 .slider__track,
@@ -68,7 +68,7 @@ padding-left: 10px;
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 200px;
+  width: 270px;
   outline: none;
 }
 
