@@ -71,7 +71,7 @@ const Header = () => {
         {/* lg:justify-normal */}
         <div class="flex items-center justify-between  lg:justify-between border-b border-b-white py-4">
           {/*  */}
-          <Link to="/" class=" w-[200px] h-auto border-b-1 border-b-accent1 hover:scale-90 transition-all">
+          <Link to="/" class=" w-[200px] h-auto border-b-1 border-b-accent1 hover:scale-95 transition-all">
             {/* <span class="text-2xl text-white font-bold border-b-4 border-b-blue-800 ">
               е-Нотаріус
             </span> */}

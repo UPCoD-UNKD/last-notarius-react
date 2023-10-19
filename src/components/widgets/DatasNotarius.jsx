@@ -78,7 +78,7 @@ const DatasNotarius = ({
       </div>
 
       {/* h-[calc(100vh-300px)]  shadow-[0px_34px_12px_-28px_rgb(0,0,0,0.25)]*/}
-      <ul class="custom__scrollbar2 relative mt-5 grid     text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
+      <ul class="custom__scrollbar2 relative mt-5     text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
         {/* <div class="absolute left-0  bottom-0 z-[1] w-full h-[10%] bg-gradient-to-t from-[rgba(0,0,0,0.3)]"></div> */}
         {/* {datasNotar.map( */}
         {filteredData.map(
@@ -192,7 +192,7 @@ const DatasNotarius = ({
                 <p class="">
                   Номер ліцензії: <span class="font-semibold">{license}</span>{" "}
                 </p>
-
+                <NavLink to={`${id}`}>
                 <button
                   type="button"
                   class=" group max-w-max mt-5 bg-accent1 hover:bg-accent1/90 transition-all  border border-slate-500 text-white p-2 px-10  flex   items-center rounded-full gap-4"
@@ -212,6 +212,7 @@ const DatasNotarius = ({
                     />
                   </svg>
                 </button>
+                </NavLink>
               </div>
             </li>
           )
