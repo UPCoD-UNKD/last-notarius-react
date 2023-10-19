@@ -10,7 +10,7 @@ const Footer = () => {
         <div class="lg:flex justify-between  ">
           <Link
             to="/"
-            class=" w-[118px] h-auto border-b-1 border-b-blue-800 hover:scale-90 transition-all"
+            class=" w-[118px] h-auto border-b-1 border-b-blue-800 hover:scale-95 transition-all"
           >
             <img width={200} height={30} src={logo} alt="logo" />
           </Link>
