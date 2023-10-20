@@ -80,7 +80,7 @@ code {
     @apply border-b-2 border-b-accent1 transition-all;
   }
   .active-paginations {
-    @apply bg-blue-400 text-white transition-all;
+    @apply bg-accent1 text-white transition-all;
   }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PaginationNotar = ({totalDatas, datasPerPage, paginate, filteredData})=>{
     const pageNumbers = [];
@@ -21,11 +21,11 @@ console.log(datasPerPage);
                 {pageNumbers.map(number => (
 
                     <li key={number} class=" active:bg-accent1 active:text-white  p-1 px-3 transition-all border border-bgDark bg-white rounded-[4px] hover:bg-black/10 text-bgDark  focus:bg-accent1 cursor-pointer">
-                        <NavLink href="/" class="" onClick={()=> paginate(number)}>
+                        <Link href="/" class="" onClick={()=> paginate(number)}>
                             {number}
-                        </NavLink>
+                        </Link>
                     </li>
-                ))}
+                )).slice(0, 10)}
                 
             </ul>
 

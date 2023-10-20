@@ -12,10 +12,10 @@ import MessageDialogForm from "../components/features/MessageDialogForm";
 import Stat from "../components/widgets/Stat";
 import Container from "../components/common/Conteiner";
 
-const NotariusPersonalOffice = ({ products }) => {
+const NotariusPersonalOffice = ({ notaries }) => {
   const { id } = useParams();
 
-  const product = products.find((p) => p.id === Number(id));
+  const notarius = notaries.find((p) => p.id === Number(id));
   const {
     region,
     nameObj,
@@ -29,9 +29,9 @@ const NotariusPersonalOffice = ({ products }) => {
     shortAddress,
     // latitude,
     // longitude,
-  } = product;
+  } = notarius;
 
-  if (!product) {
+  if (!notarius) {
     return (
       <main className="p-10 h-screen bg-white">
         <div>

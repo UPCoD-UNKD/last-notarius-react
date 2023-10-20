@@ -101,8 +101,8 @@ const MessageDialogForm = () => {
       onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
-        {/* shadow-xl */}
-      <div class="lg:w-[400px] lg:h-[180px]  border-2 p-4 rounded-[20px]">
+        {/* shadow-xl  border-2 border-b-gray-400*/}
+      <div class="lg:w-[400px] lg:h-[180px]  p-4 rounded-[20px] bg-slate-200">
           
           <h5 class="mb-4 text-xl font-semibold">Maria Smantha</h5>
           
@@ -126,7 +126,7 @@ const MessageDialogForm = () => {
        
       </SwiperSlide>
   <SwiperSlide>
-  <div class="lg:w-[400px] lg:h-[180px] border-2 p-4 rounded-[20px]">
+  <div class="lg:w-[400px] lg:h-[180px] bg-slate-200 p-4 rounded-[20px]">
           
           <div class="">
             <h5 class="mb-4 text-xl font-semibold">Lisa Cudrow</h5>
@@ -151,7 +151,7 @@ const MessageDialogForm = () => {
 {comments.map((text) => (
   
   <SwiperSlide>
-            <div class="lg:w-[400px] lg:h-[180px] h-[180px]   border-2 p-4 rounded-[20px] overflow-y-hidden ">
+            <div class="lg:w-[400px] lg:h-[180px] h-[180px]   bg-slate-200 p-4 rounded-[20px] overflow-y-hidden ">
               <h5 class="mb-4 text-xl font-semibold break-words">{name}</h5>
 
 

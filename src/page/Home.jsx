@@ -7,7 +7,7 @@ import Select from "react-select";
 import PaginationNotar from "../components/features/PaginationNotar";
 // import SearchForn from "../components/features/SearchForn";
 
-import { getProducts } from "../fakeAPI";
+// import { getProducts } from "../fakeAPI";
 
 import MultiRangeSlider from "../components/features/multiRangeSlider/MultiRangeSlider";
 import Container from "../components/common/Conteiner";
@@ -97,9 +97,10 @@ const optionsSummons = [
 
 // const Notarius = () => {
 const Home = () => {
-  const products = getProducts();
+  // const products = getProducts();
   // const datasNotar = datanot.Notar
-  const datasNotar = datanot.products;
+  // const datasNotar = datanot.products;
+  const datasNotar = datanot.notaries;
 
   const [isShownFilters, setIsShownFilters] = useState(false);
   useEffect(() => {
@@ -560,7 +561,8 @@ const Home = () => {
                 // datasNotar={filteredDataSearch}
                 loading={loading}
                 filteredData={filteredData}
-                products={products}
+                // products={products}
+                // notarius={notaries}
               />
               <PaginationNotar
                 filteredData={filteredData.length}
