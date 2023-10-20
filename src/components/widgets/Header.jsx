@@ -71,16 +71,16 @@ const Header = () => {
         {/* lg:justify-normal */}
         <div class="flex items-center justify-between  lg:justify-between border-b border-b-white py-4">
           {/*  */}
-          <Link to="/" class=" w-[200px] h-auto border-b-1 border-b-accent1 hover:scale-95 transition-all">
+          <Link to="/" class=" w-[200px] h-auto  hover:scale-95 transition-all">
             {/* <span class="text-2xl text-white font-bold border-b-4 border-b-blue-800 ">
               е-Нотаріус
             </span> */}
             <img width={118} height={30} src={logo} alt="logo" />
           </Link>
 
-          <div class={`  lg:block ${isShown ? "block absolute top-[54px] left-0 w-full h-screen bg-gradient-to-b from-[#1E40AF] via-[#1E40AF] to-[#0E1D82] z-[5] p-10 transition-all text-[20px] text-white/70 hover:text-white  " : "hidden"} `} >
+          <div class={`  lg:block ${isShown ? "block absolute top-[54px] left-0 w-full h-screen bg-bgDark z-[5] p-10 transition-all text-[20px] text-white/70 hover:text-white  " : "hidden"} `} >
             {/* lg:ml-10  xl:ml-60*/}
-            <div class="  flex flex-col lg:flex-row  gap-5 xl:gap-7 text-[9px] text-white uppercase"
+            <div class="  flex flex-col lg:flex-row  gap-5 xl:gap-8 text-[9px] lg:text-[11px] text-white  uppercase"
             onClick={() => {
               if(window.innerWidth < 768 ){
                 setIsShown(!isShown);
@@ -95,25 +95,25 @@ const Header = () => {
             >
               <NavLink
                 to="/"
-                class="active  hover:text-white/50 transition-all max-w-max inlin-block"
+                class="text-white hover:text-white/50 transition-all max-w-max inlin-block"
               >
                 Головна
               </NavLink>
               <NavLink
                 to="/forcitizens"
-                class="active  hover:text-white/50 transition-all max-w-max inlin-block"
+                class="text-white hover:text-white/50 transition-all max-w-max inlin-block"
               >
                 Для громадян
               </NavLink>
               <NavLink
                 to="/ForNotaries"
-                class="active  hover:text-white/50 transition-all max-w-max inlin-block"
+                class="text-white hover:text-white/50 transition-all max-w-max inlin-block"
               >
                 Для нотаріусів
               </NavLink>
               <NavLink
                 to="/notarialacts"
-                class="active  hover:text-white/50 transition-all max-w-max inlin-block"
+                class="text-white hover:text-white/50 transition-all max-w-max inlin-block"
               >
                 Нотаріальні діяння
               </NavLink>

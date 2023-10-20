@@ -64,8 +64,59 @@
 // }
 
 
+/**
+ * Structure [arr{}]
+ */
+
+// const fs = require('fs');
+// const datanotPath = './src/datanot.json'; // Replace with the correct path to your JSON file
+
+// try {
+//   // Read the JSON file
+//   const jsonData = fs.readFileSync(datanotPath, 'utf8');
+
+//   // Parse the JSON data
+//   const parsedData = JSON.parse(jsonData);
+
+//   // Handle different JSON structures (if necessary)
+//   const data = parsedData.Notar || parsedData;
+
+//   // Check if 'data' is an array before proceeding
+//   if (!Array.isArray(data)) {
+//     throw new Error('Data is not an array.');
+//   }
+
+//   // Iterate over the array of objects and add an "id" field
+//   data.forEach((item, index) => {
+//     item.id = index + 1; // You can use any unique identifier logic here
+//   });
+
+//   // Convert the modified data back to JSON format
+//   const modifiedJsonData = JSON.stringify(data, null, 2);
+
+//   // Write the modified JSON data back to the file
+//   fs.writeFileSync(datanotPath, modifiedJsonData, 'utf8');
+
+//   console.log('Added "id" field to JSON data successfully.');
+// } catch (error) {
+//   console.error('An error occurred:', error.message);
+// }
+
+
+
+// node ../src/addIdToJson.js
+
+// node addIdToJson.js   ======Dood job====
+
+
+
+/**
+ * Structure { "products":[arr{}]}
+ * Structure { "notaries":[arr{}]}
+ */
+
 const fs = require('fs');
-const datanotPath = './src/datanot.json'; // Replace with the correct path to your JSON file
+const datanotPath = './src/datanot.json';
 
 try {
   // Read the JSON file
@@ -74,21 +125,20 @@ try {
   // Parse the JSON data
   const parsedData = JSON.parse(jsonData);
 
-  // Handle different JSON structures (if necessary)
-  const data = parsedData.Notar || parsedData;
-
-  // Check if 'data' is an array before proceeding
-  if (!Array.isArray(data)) {
+  // Ensure that 'products' is an array
+  // if (!Array.isArray(parsedData.products)) {
+  if (!Array.isArray(parsedData.notaries)) {
     throw new Error('Data is not an array.');
   }
 
   // Iterate over the array of objects and add an "id" field
-  data.forEach((item, index) => {
+  // parsedData.products.forEach((item, index) => {
+  parsedData.notaries.forEach((item, index) => {
     item.id = index + 1; // You can use any unique identifier logic here
   });
 
   // Convert the modified data back to JSON format
-  const modifiedJsonData = JSON.stringify(data, null, 2);
+  const modifiedJsonData = JSON.stringify(parsedData, null, 2);
 
   // Write the modified JSON data back to the file
   fs.writeFileSync(datanotPath, modifiedJsonData, 'utf8');
@@ -98,9 +148,4 @@ try {
   console.error('An error occurred:', error.message);
 }
 
-
-
-
-
-// node addIdToJson.js
-// node ../src/addIdToJson.js
+// node addIdToJson.js   ======Dood job====

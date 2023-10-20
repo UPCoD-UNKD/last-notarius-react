@@ -24,7 +24,8 @@ import Hero from "./components/widgets/Hero";
 
 export const App = () => {
 
-  const products = datafake.products;
+  // const products = datafake.products;
+  const notaries = datafake.notaries;
   return (
     <div className="app_wrapper relative">
       <Header />
@@ -38,7 +39,8 @@ export const App = () => {
           <Route path="/notarius/:id" element={<NotariusPersonalOffice products={products} />} /> */}
           {/* <Route path="/" element={<Notarius />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<NotariusPersonalOffice products={products} />} />
+          {/* <Route path="/:id" element={<NotariusPersonalOffice products={products} />} /> */}
+          <Route path="/:id" element={<NotariusPersonalOffice notaries={notaries} />} />
           
           <Route path="/forcitizens" element={<ForСitizens />} />
           <Route path="/fornotaries" element={<ForNotaries />} />
