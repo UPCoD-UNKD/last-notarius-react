@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import axios from "axios";
 
-import datanot from "../datanot.json";
+import { db } from "../firebase";
+import {ref,   onValue} from "firebase/database";
+
+// import datanot from "../datanot.json";
 import DatasNotarius from "../components/widgets/DatasNotarius";
 import Select from "react-select";
 import PaginationNotar from "../components/features/PaginationNotar";
@@ -101,12 +104,39 @@ const Home = () => {
   // const products = getProducts();
   // const datasNotar = datanot.Notar
   // const datasNotar = datanot.products;
-  const datasNotar = datanot.notaries;
+ 
 
   const [isShownFilters, setIsShownFilters] = useState(false);
+  const [notaryData, setNotaryData] = useState({
+    notaries: [] // Initialize an empty array to store notaries
+  });
+
+  // const datasNotar = datanot.notaries;
+  const datasNotar = notaryData.notaries;
+
+  //read
+  useEffect(() => {
+    onValue(ref(db), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        // Object.values(data).map((todo) => {
+        //   setTodos((oldArray) => [...oldArray, todo]);
+        //   return todo;
+        // });
+
+        // Convert data to an array and update the todos state
+        const todosArray = Object.values(data);
+        // setTodos(todosArray);
+        setNotaryData({ notaries: todosArray })
+      }
+    });
+  }, []);
+
   useEffect(() => {
     setIsShownFilters(false);
   }, []);
+
+
 
   // console.log(datasNotar);
   /**

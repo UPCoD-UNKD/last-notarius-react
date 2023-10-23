@@ -1,12 +1,11 @@
-import React, { useState , useEffect} from "react";
+import React, { useState ,} from "react";
 import { NavLink } from "react-router-dom";
 
 import avatar from "../../images/avatar-02.png";
 
 import ModalMap from "../features/ModalMap";
 
-import { db } from "../../firebase";
-import {ref,   onValue} from "firebase/database";
+
 
 const DatasNotarius = ({
   datasNotar,
@@ -17,29 +16,7 @@ const DatasNotarius = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
- 
-  // const [todos, setTodos] = useState([]);
-  const [notaryData, setNotaryData] = useState({
-    notaries: [] // Initialize an empty array to store notaries
-  });
 
-  //read
-  useEffect(() => {
-    onValue(ref(db), (snapshot) => {
-      const data = snapshot.val();
-      if (data !== null) {
-        // Object.values(data).map((todo) => {
-        //   setTodos((oldArray) => [...oldArray, todo]);
-        //   return todo;
-        // });
-
-        // Convert data to an array and update the todos state
-        const todosArray = Object.values(data);
-        // setTodos(todosArray);
-        setNotaryData({ notaries: todosArray })
-      }
-    });
-  }, []);
 
   if (loading) {
     return (
@@ -92,7 +69,7 @@ const DatasNotarius = ({
     // xl:pl-10
     <div class=" ">
       {/* shadow-[0px_34px_12px_-28px_rgb(0,0,0,0.25)] */}
-      <div class="lg:flex items-center justify-between  pb-4  ">
+      <div class="lg:flex items-center justify-between  pb-4 pr-5 ">
 
 
         <h2 class="text-base">
@@ -125,9 +102,10 @@ const DatasNotarius = ({
         </div>
       </div>
 
-      <ul>
+      <ul class="custom__scrollbar2 relative mt-5     text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
       
-      {notaryData.notaries.map(({
+      {/* {notaryData.notaries.map(({ */}
+      {filteredData.map(({
         
         id,
         todo,
@@ -156,7 +134,7 @@ const DatasNotarius = ({
            
             <li
               key={id}
-              class="pl-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5 border-l  border-l-slate-400 border-t border-t-slate-400 "
+              class="px-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5 border-l  border-l-slate-400 border-t border-t-slate-400 "
             >
               
 
