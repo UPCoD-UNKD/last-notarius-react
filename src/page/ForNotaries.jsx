@@ -6,8 +6,12 @@ import { useEffect, useState } from "react";
 import { set, ref, onValue, remove, update } from "firebase/database";
 
 const ForNotaries = () => {
+  const [notaryData, setNotaryData] = useState({
+    notaries: [] // Initialize an empty array to store notaries
+  });
+
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [tempUuid, setTempUuid] = useState("");
   //added new input
@@ -50,7 +54,8 @@ const [ shortAddress, setShortAddress] = useState("");
 
         // Convert data to an array and update the todos state
         const todosArray = Object.values(data);
-        setTodos(todosArray);
+        // setTodos(todosArray);
+        setNotaryData({ notaries: todosArray })
       }
     });
   }, []);
@@ -59,7 +64,7 @@ const [ shortAddress, setShortAddress] = useState("");
   const writeToDatabase = () => {
     // const uuid = uid();
     const id = uid();
-    set(ref(db, `/${id}`), {
+    const newNotary = {
       id,
       todo,
       
@@ -87,14 +92,49 @@ const [ shortAddress, setShortAddress] = useState("");
     shortAddress,
     // latitude,
     // longitude,
-    });
+    };
 
+    // set(ref(db, `/${id}`), {
+    //   id,
+    //   todo,
+      
+
+    // //   title, // Add the title field
+    // // description, // Add the description field
+    // avatar, // Add the avatar field
+    // fio,
+    // license,
+    // post,
+    // description,
+    // schedule,
+
+
+    // region,
+    // city,
+    // nameObj,
+    // kind,
+    // contacts,
+   
+    
+    // areal,
+    
+    // fullAddress,
+    // shortAddress,
+    // // latitude,
+    // // longitude,
+    // });
+
+    const updatedNotaries = [...notaryData.notaries, newNotary];
+    set(ref(db), updatedNotaries);
+
+
+    setNotaryData("");
    // Clear all input fields
   setTodo("");
   // setTitle("");
   // setDescription("");
   // setAvatar("");
-  setTodos("");
+  // setTodos("");
   setIsEdit("");
   setTempUuid("");
   setAvatar("");
@@ -168,7 +208,8 @@ const [ shortAddress, setShortAddress] = useState("");
                <button class="bg-slate-400 px-2" onClick={()=> {
                 
                 setIsEdit(false);
-                setTodo("");
+                // setTodo("");
+                setTempUuid("");
                }
                 
                 }>X</button>
@@ -451,7 +492,8 @@ class=" border border-gray-500 p-2"
 
 
     <ul>
-        {todos.map(({
+        {/* {todos.map(({ */}
+        {notaryData.notaries.map(({
           id,
           todo,
           // title,
@@ -480,7 +522,7 @@ class=" border border-gray-500 p-2"
         ) => (
          
             <li key={id} class=" flex items-end  gap-2 mt-2 ">
-              <div class="flex flex-col">
+              <div class="flex items-start flex-col">
 
               
               {/* <h1>{todo.todo}</h1>

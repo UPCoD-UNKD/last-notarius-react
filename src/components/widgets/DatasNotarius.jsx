@@ -18,7 +18,10 @@ const DatasNotarius = ({
   const [isOpen, setIsOpen] = useState(false);
 
  
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
+  const [notaryData, setNotaryData] = useState({
+    notaries: [] // Initialize an empty array to store notaries
+  });
 
   //read
   useEffect(() => {
@@ -32,7 +35,8 @@ const DatasNotarius = ({
 
         // Convert data to an array and update the todos state
         const todosArray = Object.values(data);
-        setTodos(todosArray);
+        // setTodos(todosArray);
+        setNotaryData({ notaries: todosArray })
       }
     });
   }, []);
@@ -122,22 +126,23 @@ const DatasNotarius = ({
       </div>
 
       <ul>
-      {todos.map((todo
-        // {
-        // id,
-        // todo,
-        //     region,
-        //     nameObj,
-        //     kind,
-        //     contacts,
-        //     fio,
-        //     license,
-        //     areal,
-        //     city,
-        //     fullAddress,
-        //     shortAddress,
-        //     latitude,
-        //     longitude,}
+      
+      {notaryData.notaries.map(({
+        
+        id,
+        todo,
+            region,
+            nameObj,
+            kind,
+            contacts,
+            fio,
+            license,
+            areal,
+            city,
+            fullAddress,
+            shortAddress,
+            latitude,
+            longitude,}
             ) => (
          
             
@@ -150,7 +155,7 @@ const DatasNotarius = ({
              
            
             <li
-              key={todo.id}
+              key={id}
               class="pl-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5 border-l  border-l-slate-400 border-t border-t-slate-400 "
             >
               
@@ -161,29 +166,29 @@ const DatasNotarius = ({
 
               <div class="">
                 <div class="flex gap-4 lg:gap-8 xl:gap-9 ">
-                  <NavLink to={`${todo.id}`}>
+                  <NavLink to={`${id}`}>
                     <div class="relative ">
                       <img
                         class="w-[100px] h-auto rounded-full bg-gradient-to-b from-[#E1F2EE] to-[#6D707B] "
                         width={100}
                         height={100}
-                        src={todo.avatar}
-                        alt={todo.id}
+                        src={avatar}
+                        alt={id}
                       />
 
                      
                     </div>
                   </NavLink>
                   <div class=" grid justify-between ">
-                    <NavLink to={`${todo.id}`}>
-                      <h2 class="text-[16px] font-bold">{todo.fio}</h2>
+                    <NavLink to={`${id}`}>
+                      <h2 class="text-[16px] font-bold">{fio}</h2>
                     </NavLink>
-                    <p class="text-xs">{todo.nameObj}</p>
+                    <p class="text-xs">{nameObj}</p>
 
                     <div class="hidden lg:block">
                       <div class="mt-4 flex flex-col text-xs ">
                         <span>
-                          Адреса: {todo.region} {todo.areal}
+                          Адреса: {region} {areal}
                         </span>
                       
 
@@ -229,9 +234,9 @@ const DatasNotarius = ({
                   Досвід роботи: <span class="font-semibold">{"5"}</span> років
                 </p>
                 <p class="">
-                  Номер ліцензії: <span class="font-semibold">{todo.license}</span>{" "}
+                  Номер ліцензії: <span class="font-semibold">{license}</span>{" "}
                 </p>
-                <NavLink to={`${todo.id}`}>
+                <NavLink to={`${id}`}>
                 <button
                   type="button"
                   class=" group max-w-max mt-5 bg-accent1 hover:bg-accent1/90 transition-all  border border-slate-500 text-white p-2 px-10  flex   items-center rounded-full gap-4"
@@ -261,10 +266,12 @@ const DatasNotarius = ({
         ))}
         </ul>
 
-      {/* h-[calc(100vh-300px)]  shadow-[0px_34px_12px_-28px_rgb(0,0,0,0.25)]*/}
-      <ul class="custom__scrollbar2 relative mt-5     text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
-        {/* <div class="absolute left-0  bottom-0 z-[1] w-full h-[10%] bg-gradient-to-t from-[rgba(0,0,0,0.3)]"></div> */}
-        {/* {datasNotar.map( */}
+
+
+      {/* {datasNotar.map( */}
+      {/* <ul class="custom__scrollbar2 relative mt-5     text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
+       
+       
         {filteredData.map(
           ({
             id,
@@ -281,7 +288,7 @@ const DatasNotarius = ({
             latitude,
             longitude,
           }) => (
-            // grid lg:grid-cols-[60%_1fr] lg:grid-rows-[1fr_auto]
+           
             <li
               key={id}
               class="pl-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5 border-l  border-l-slate-400 border-t border-t-slate-400 "
@@ -304,19 +311,7 @@ const DatasNotarius = ({
                         alt={id}
                       />
 
-                      {/* <svg
-                        class=" w-[60%] h-[60%] absolute top-[50%] left-[50%] translate-x-[-50%] -translate-y-[50%]"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="65"
-                        height="74"
-                        viewBox="0 0 65 74"
-                        fill="none"
-                      >
-                        <path
-                          d="M32.5 37C42.7578 37 51.0714 28.7184 51.0714 18.5C51.0714 8.28164 42.7578 0 32.5 0C22.2422 0 13.9286 8.28164 13.9286 18.5C13.9286 28.7184 22.2422 37 32.5 37ZM46.3996 41.7117L39.4643 69.375L34.8214 49.7188L39.4643 41.625H25.5357L30.1786 49.7188L25.5357 69.375L18.6004 41.7117C8.25558 42.2031 0 50.6293 0 61.05V67.0625C0 70.8926 3.11942 74 6.96429 74H58.0357C61.8806 74 65 70.8926 65 67.0625V61.05C65 50.6293 56.7444 42.2031 46.3996 41.7117Z"
-                          fill="#545454"
-                        />
-                      </svg> */}
+                     
                     </div>
                   </NavLink>
                   <div class=" grid justify-between ">
@@ -330,10 +325,7 @@ const DatasNotarius = ({
                         <span>
                           Адреса: {region} {areal}
                         </span>
-                        {/* <span>{shortAddress}</span> */}
-                        {/* <span>
-                        Графік роботи: з {" 08:00"} до {"19:00"}
-                      </span> */}
+                       
 
                         <div class="mt-4 flex flex-col gap-3 justify-between ">
                           <p class="text-xs">Відгукі клієнтів </p>
@@ -367,10 +359,7 @@ const DatasNotarius = ({
                   </div>
                 </div>
 
-                {/* <div class="mt-5">
-                    <h3 class="text-[24px] font-bold">Опис</h3>
-                    <p class="text-sm font-semibold w-[500px]">{description}</p>
-                  </div> */}
+               
               </div>
 
              
@@ -407,7 +396,7 @@ const DatasNotarius = ({
             </li>
           )
         )}
-      </ul>
+      </ul> */}
     </div>
   );
 };
