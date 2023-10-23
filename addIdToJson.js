@@ -114,7 +114,8 @@
  * Structure { "products":[arr{}]}
  * Structure { "notaries":[arr{}]}
  */
-
+//  import { uid } from "uid";
+//  const uuid = uid();
 const fs = require('fs');
 const datanotPath = './src/datanot.json';
 
@@ -135,6 +136,7 @@ try {
   // parsedData.products.forEach((item, index) => {
   parsedData.notaries.forEach((item, index) => {
     item.id = index + 1; // You can use any unique identifier logic here
+    // item.id = uuid; // You can use any unique identifier logic here
   });
 
   // Convert the modified data back to JSON format

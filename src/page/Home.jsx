@@ -79,15 +79,16 @@ const optionsReviews = [
   { value: "Позитивні", label: "Позитивні" },
   { value: "Негативні", label: "Негативні" },
 ];
-const optionsPriceRange = [
-  { value: "", label: "	Ціновий діапазон" },
-  { value: "", label: "" },
-  { value: "", label: "" },
-];
+
 const optionsSummons = [
   { value: "Виклик нотаріуса", label: "	Виклик нотаріуса" },
   { value: "На дім", label: "На дім" },
   { value: "В офіс", label: "В офіс" },
+];
+const optionsPriceRange = [
+  { value: "", label: "	Ціновий діапазон" },
+  { value: "", label: "" },
+  { value: "", label: "" },
 ];
 
 // const options = [
