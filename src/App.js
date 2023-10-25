@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 // import datafake from "./datafake.json";
-import datafake from "./datanot.json";
+// import datafake from "./datanot.json";
+
+import { db } from "./firebase";
+import {ref,   onValue} from "firebase/database";
 
 
 import "./App.css";
@@ -25,7 +28,37 @@ import Hero from "./components/widgets/Hero";
 export const App = () => {
 
   // const products = datafake.products;
-  const notaries = datafake.notaries;
+  // const notaries = datafake.notaries;
+
+
+  const [notaryData, setNotaryData] = useState({
+    notaries: [] // Initialize an empty array to store notaries
+  });
+
+ 
+  // const datasNotar = notaryData.notaries;
+  const notaries = notaryData.notaries;
+
+  //read
+  useEffect(() => {
+    onValue(ref(db), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        // Object.values(data).map((todo) => {
+        //   setTodos((oldArray) => [...oldArray, todo]);
+        //   return todo;
+        // });
+
+        // Convert data to an array and update the todos state
+        const todosArray = Object.values(data);
+        // setTodos(todosArray);
+        setNotaryData({ notaries: todosArray })
+      }
+    });
+  }, []);
+
+
+  
   return (
     <div className="app_wrapper relative">
       <Header />

@@ -16,6 +16,17 @@ const NotariusPersonalOffice = ({ notaries }) => {
   const { id } = useParams();
 
   const notarius = notaries.find((p) => p.id === Number(id));
+  if (!notarius) {
+    return (
+      <main className="p-10 h-screen bg-white">
+        <div>
+          <h2>Product Not Found</h2>
+          <p>The product with id {id} does not exist.</p>
+        </div>
+      </main>
+    );
+  }
+  
   const {
     region,
     nameObj,
@@ -31,16 +42,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
     // longitude,
   } = notarius;
 
-  if (!notarius) {
-    return (
-      <main className="p-10 h-screen bg-white">
-        <div>
-          <h2>Product Not Found</h2>
-          <p>The product with id {id} does not exist.</p>
-        </div>
-      </main>
-    );
-  }
+
   //  const map = '!1m12!1m10!1m3!1d81228.9020483256!2d30.578045688476564!3d50.489453380534506!2m1!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1696353021328!5m2!1sru!2sua '
   const map2 =
     "!1m14!1m12!1m3!1d32257.47160492743!2d30.49221469769181!3d50.457551833063484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1695905368028!5m2!1sru!2sua";
