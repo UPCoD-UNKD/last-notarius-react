@@ -12,7 +12,7 @@ import PaginationNotar from "../components/features/PaginationNotar";
 
 // import { getProducts } from "../fakeAPI";
 
-import MultiRangeSlider from "../components/features/multiRangeSlider/MultiRangeSlider";
+// import MultiRangeSlider from "../components/features/multiRangeSlider/MultiRangeSlider";
 import Container from "../components/common/Conteiner";
 // import "./styles.css";
 // import IconXMark from "../components/icons/IconXMark";
@@ -22,6 +22,12 @@ const optionsRegion = [
   { value: "Херсонська обл.", label: "Херсонська обл." },
   { value: "Волинська обл.", label: "Волинська обл." },
   { value: "Київська обл.", label: "Київська обл." },
+  { value: "Одеська обл.", label: "Одеська обл." },
+  { value: "Львівська обл.", label: "Львівська обл." },
+  { value: "Харківська обл.", label: "Харківська обл." },
+  { value: "Донецька обл.", label: "Донецька обл." },
+  { value: "Запорізька обл.", label: "Запорізька обл." },
+  // { value: "Запорізька обл.", label: "Запорізька обл." },
 ];
 
 const optionsCity = [
@@ -29,18 +35,32 @@ const optionsCity = [
   { value: "Іванівка", label: "Іванівка" },
   { value: "Іваничі", label: "Іваничі" },
   { value: "Іванків", label: "Іванків" },
+  { value: "Одеса", label: "Одеса" },
+  { value: "Львів", label: "Львів" },
+  { value: "Харків", label: "Харків" },
+  { value: "Донецьк", label: "Донецьк" },
+  { value: "Запоріжжя", label: "Запоріжжя" },
 ];
 
-const optionsKind = [
+// const optionsKind = [
+//   { value: "", label: "Вид нотаріальної діяльності" },
+//   { value: "смт.", label: "смт." },
+//   { value: "м.", label: "м." },
+// ];
+const optionsNameObj = [
   { value: "", label: "Вид нотаріальної діяльності" },
-  { value: "смт.", label: "смт." },
-  { value: "м.", label: "м." },
+  { value: "Державна нотаріальна контора", label: "Державна нотаріальна контора" },
+  { value: "Приватна нотаріальна контора", label: "Приватна нотаріальна контора" },
 ];
 
 const optionsRating = [
   { value: "", label: "Рейтинг користувачів" },
-  { value: "3", label: "3" },
-  { value: "4", label: "4" },
+  { value: "3.0", label: "3.0" },
+  { value: "4.0", label: "4.0" },
+  { value: "4.3", label: "4.3" },
+  { value: "4.5", label: "4.5" },
+  { value: "4.6", label: "4.6" },
+  { value: "4.8", label: "4.8" },
   { value: "5", label: "5" },
 ];
 
@@ -48,23 +68,33 @@ const optionsExperience = [
   { value: "", label: "Досвід роботи" },
   { value: "5", label: "5" },
   { value: "10", label: "10" },
+  { value: "11", label: "11" },
+  { value: "12", label: "12" },
+  { value: "14", label: "14" },
   { value: "15", label: "15" },
+  { value: "16", label: "16" },
+  { value: "18", label: "18" },
 ];
 
 const optionsLanguages = [
   { value: "", label: "Мови спілкування" },
-  { value: "Українська", label: "Українська" },
-  { value: "Англійська", label: "Англійська" },
+  { value: "Українська", label: "Українська" }, 
+  { value: "Українська, Англійська", label: "Українська, Англійська" }, 
+  { value: "Українська, Російська, Англійська", label: "Українська, Російська, Англійська" },
+  { value: "Українська, Польська, Англійська", label: "Українська, Польська, Англійська" },
+  { value: "Українська, Російська", label: "Українська, Російська" },
+  { value: "Українська, Англійська", label: "Українська, Англійська" },
 ];
 
 const optionsAccessibility = [
   { value: "", label: "Доступність для інвалідів" },
-  { value: "Падус в наявності", label: "Падус в наявності" },
-  { value: "Падус відсутній", label: "Падус відсутній" },
+  { value: "Пандус в наявності", label: "Пандус в наявності" },
+  { value: "Пандус відсутній", label: "Пандус відсутній" },
 ];
 const optionsWorkTime = [
-  { value: "", label: "	Час роботи" },
+  { value: "", label: "	Графік роботи" },
   { value: "08:00 - 17:00", label: "08:00 - 17:00" },
+  { value: "08:30 - 17:30", label: "08:30 - 17:30" },
   { value: "09:00 - 18:00", label: "09:00 - 18:00" },
 ];
 const optionsOnlineServices = [
@@ -90,8 +120,12 @@ const optionsSummons = [
 ];
 const optionsPriceRange = [
   { value: "", label: "	Ціновий діапазон" },
-  { value: "", label: "" },
-  { value: "", label: "" },
+  { value: "800-1500", label: "800-1500" },
+  { value: "800-1800", label: "800-1800" },
+  { value: "900-2000", label: "900-2000" },
+  { value: "1000-2500", label: "1000-2500" },
+  { value: "1000-3000", label: "1000-3000" },
+  { value: "1500-5000", label: "1500-5000" },
 ];
 
 // const options = [
@@ -161,9 +195,12 @@ const Home = () => {
   // const [selectedCity, setSelectedCity] = useState(optionsCity);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
-  const [selectedKind, setSelectedKind] = useState("");
+  // const [selectedKind, setSelectedKind] = useState("");
+  const [selectedNameObj, setSelectedNameObj] = useState("");
   const [selectedRating, setSelectedRating] = useState("");
+
   const [selectedExperience, setSelectedExperience] = useState("");
+
   const [selectedLanguages, setSelectedLanguages] = useState("");
   const [selectedAccessibility, setSelectedAccessibility] = useState("");
   const [selectedWorkTime, setSelectedWorkTime] = useState("");
@@ -184,10 +221,11 @@ const Home = () => {
     setSelectedCity(selectedCity.value);
     setIsFiltered(true);
   };
-  const handleSelectChangeKind = (selectedKind) => {
-    setSelectedKind(selectedKind.value);
+  const handleSelectChangeNameObj = (selectedNameObj) => {
+    setSelectedNameObj(selectedNameObj.value);
     setIsFiltered(true);
   };
+
   const handleSelectChangeRating = (selectedRating) => {
     setSelectedRating(selectedRating.value);
     setIsFiltered(true);
@@ -196,6 +234,7 @@ const Home = () => {
     setSelectedExperience(selectedExperience.value);
     setIsFiltered(true);
   };
+
   const handleSelectChangeLanguages = (selectedLanguages) => {
     setSelectedLanguages(selectedLanguages.value);
     setIsFiltered(true);
@@ -247,38 +286,44 @@ const Home = () => {
           (selectedCity && selectedCity !== ""
             ? data.city === selectedCity
             : true) &&
-          (selectedKind && selectedKind !== ""
-            ? data.kind === selectedKind
+          // (selectedKind && selectedKind !== ""
+          //   ? data.kind === selectedKind
+          //   : true) &&
+          (selectedNameObj && selectedNameObj !== ""
+            ? data.nameObj === selectedNameObj
             : true) &&
+
           (selectedRating && selectedRating !== ""
             ? data.rating === selectedRating
             : true) &&
+
           (selectedExperience && selectedExperience !== ""
-            ? data.experience === selectedExperience
+            ? data.expirience === selectedExperience
             : true) &&
+
           (selectedLanguages && selectedLanguages !== ""
-            ? data.languages === selectedLanguages
+            ? data.language === selectedLanguages
             : true) &&
           (selectedAccessibility && selectedAccessibility !== ""
             ? data.accessibility === selectedAccessibility
             : true) &&
           (selectedWorkTime && selectedWorkTime !== ""
-            ? data.workTime === selectedWorkTime
+            ? data.worktime === selectedWorkTime
             : true) &&
           (selectedOnlineServices && selectedOnlineServices !== ""
-            ? data.onlineServices === selectedOnlineServices
+            ? data.onlineservices === selectedOnlineServices
             : true) &&
           (selectedUrgentServices && selectedUrgentServices !== ""
-            ? data.urgentServices === selectedUrgentServices
+            ? data.urgentservices === selectedUrgentServices
             : true) &&
           (selectedReviews && selectedReviews !== ""
             ? data.reviews === selectedReviews
             : true) &&
           (selectedPriceRange && selectedPriceRange !== ""
-            ? data.priceRange === selectedPriceRange
+            ? data.pricerange === selectedPriceRange
             : true) &&
           (selectedSummons && selectedSummons !== ""
-            ? data.Summons === selectedSummons
+            ? data.summons === selectedSummons
             : true)
       )
     : datasNotar;
@@ -362,6 +407,7 @@ const Home = () => {
                 Вибір категорій
               </h2>
               <div class="px-[30px] text-[14px] mt-[26px]">
+             
                 <Select
                   styles={{
                     control: (baseStyles, state) => ({
@@ -369,7 +415,8 @@ const Home = () => {
                       borderColor: state.isFocused
                         ? "transparent"
                         : "transparent",
-                    }),
+                    }), 
+
                   }}
                   options={optionsRegion}
                   value={optionsRegion}
@@ -401,9 +448,9 @@ const Home = () => {
                         : "transparent",
                     }),
                   }}
-                  options={optionsKind}
-                  value={optionsKind}
-                  onChange={handleSelectChangeKind}
+                  options={optionsNameObj}
+                  value={optionsNameObj}
+                  onChange={handleSelectChangeNameObj}
                   isMulti={false} // Set to true if you want to allow multiple selections
                   placeholder="Вид нотаріальної діяльності"
                 />
@@ -566,7 +613,9 @@ const Home = () => {
                         ? "transparent"
                         : "transparent",
                     }),
+                    
                   }}
+                 
                   options={optionsPriceRange}
                   value={optionsPriceRange}
                   onChange={handleSelectChangePriceRange}
@@ -574,13 +623,17 @@ const Home = () => {
                   placeholder="Ціновий діапазон"
                 />
 
-                <MultiRangeSlider
+
+
+                {/* <MultiRangeSlider
+              
                   min={0}
                   max={1000}
                   onChange={({ min, max }) =>
                     console.log(`min = ${min}, max = ${max}`)
                   }
-                />
+                /> */}
+              
               </div>
             </div>
 

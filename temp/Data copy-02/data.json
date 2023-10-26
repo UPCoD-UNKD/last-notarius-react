@@ -4,42 +4,47 @@
       "avatar": "url",
       "fio": "Черниш Лідія Іванівна",
       "license": "3473",
+      "contacts": "Херсонська обл., Іванівський р., смт. Іванівка, 75400, вул. Миру, 5, 05531-3-12-62, 3-14-13",
       "post": "mailto:someone@example.com",
       "description": "Нотаріус за операціями з нерухомістю перевіряє документи учасників правочину, право власності на нерухомість, організовує процедуру здійснення купівлі-продажу та взаєморозрахунків, забезпечує гарантії права власності шляхом внесення даних до державного реєстру.",
+      
       "telegram": "https://t.me/",
       "viber": "viber://chat?number=+380950000000",
+      
+
+
+
+      "region": "Херсонська обл.",      
+      "city": "Іванівка",
+      "areal": "смт. Іванівка",
+      "kind": "смт.",
+      "fullAddress": "Іванівка, 75400, вул. Миру, 5, 05531-3-12-62, 3-14-13",
+      "shortAddress": " вул. Миру, 5, 05531-3-12-62, 3-14-13",      
+      
+     
+      "nameObj": "Іванівська державна нотаріальна контора",
+
+      "rating": "5",
+      "expirience": "10",
+      "language": "Українська Англійська",
+      "accessibility": "Пандус в наявності",
+      "worktime": "08:00 - 17:00",
+      "onlineservices": "Онлайн",
+      "urgentservices": "Терміново",
+
+      "reviews": "Позитивнi",
+
+      "summons": "На дім",
+      "pricerange": "500-1000",
+
+
+      
       "notarialActions": "Довіреності Договори",
       "importantUpdates": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
       "statistic": "80 ",
       "promotionalActions": "Lorem ipsum dolor sit amet consectetur adipisicing elit.  ",
       "usefulResources": "Lorem ipsum dolor sit amet consectetur adipisicing elit.  ",
       "website": "https:// ",
-
-
-
-      "region": "Херсонська обл.",      
-      "city": "Іванівка",
-      "nameObj": "Іванівська державна нотаріальна контора",
-      "rating": "5",
-      "expirience": "10",
-      "language": "Українська Англійська",
-      "accessibility": "Падус в наявності",
-      "worktime": "08:00 - 17:00",
-      "onlineservices": "Онлайн",
-      "urgentservices": "Терміново",
-
-      "reviews": "Позитивнi",
-      "summons": "На дім",
-      "pricerange": "500-1000",
-
-
-
-      "areal": "смт. Іванівка",
-      "fullAddress": "Іванівка, 75400, вул. Миру, 5, 05531-3-12-62, 3-14-13",
-      "shortAddress": " вул. Миру, 5, 05531-3-12-62, 3-14-13",      
-       "contacts": "Херсонська обл., Іванівський р., смт. Іванівка, 75400, вул. Миру, 5, 05531-3-12-62, 3-14-13",
-
-      "kind": "смт.",
      
      
      

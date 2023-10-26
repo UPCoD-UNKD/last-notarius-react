@@ -10,12 +10,12 @@ const Footer = () => {
         <div class="lg:flex justify-between  ">
           <Link
             to="/"
-            class=" w-[118px] h-auto border-b-1 border-b-blue-800 hover:scale-95 transition-all"
+            class=" w-[200px] lg:w-[118px]  h-auto  hover:scale-95 transition-all"
           >
-            <img width={200} height={30} src={logo} alt="logo" />
+            <img width={118} height={30} src={logo} alt="logo" />
           </Link>
 
-          <div class="flex gap-10 text-[9px] xl:pt-[15px] ">
+          <div class="flex gap-10 mt-10 lg:mt-[10px] text-[12px]   xl:pt-[15px] ">
           {/* lg:flex-row lg:mx-auto pt-5 cursor-pointer max-w-max gap-3 lg:gap-10 */}
           <ul class="flex flex-col gap-5">
             <li class="  ">НОВІГАЦІЯ</li>
@@ -33,8 +33,8 @@ const Footer = () => {
             </li>
           </ul>
 
-          <ul class="flex flex-col gap-5">
-            <li class="text-white">ПОСЛУГИ</li>
+          <ul class="flex flex-col gap-5 uppercase">
+            <li class="text-white ">ПОСЛУГИ</li>
             <li class="text-white/50 hover:text-white cursor-pointer transition-all ">
               Запис на прийом
             </li>
@@ -53,7 +53,7 @@ const Footer = () => {
           <div class="flex gap-10 mt-5 lg:mt-0 items-end">
             {/* <h3 class="text-white">Підписуйтесь на нас у соцмережах</h3> */}
 
-            <ul class="flex gap-4 ">
+            <ul class="flex gap-4 mt-10 ">
               <li>
                 <a
                   class="p-1  hover:bg-white/10 flex items-center rounded border border-white/50 transition-all"

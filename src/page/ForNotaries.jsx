@@ -4,7 +4,7 @@ import { uid } from "uid";
 import Container from "../components/common/Conteiner";
 import { useEffect, useState } from "react";
 // import { set, ref, onValue, remove, update } from "firebase/database";
-import { set, ref, onValue,  update } from "firebase/database";
+import { set, ref, onValue, update } from "firebase/database";
 
 const ForNotaries = () => {
   const [notaryData, setNotaryData] = useState({
@@ -21,20 +21,42 @@ const ForNotaries = () => {
   const [avatar, setAvatar] = useState("");
   const [fio, setFio] = useState("");
   const [license, setLicense] = useState("");
+  const [contacts, setContacts] = useState("");
   const [post, setPost] = useState("");
   const [description, setDescription] = useState("");
-  const [schedule, setSchedule] = useState("");
 
   const [region, setRegion] = useState("");
   const [city, setCity] = useState("");
+   // Населений пункт
+   // const [areal, setAreal] = useState("");
+   const [kind, setKind] = useState("");
+   const [shortAddress, setShortAddress] = useState("");
+   const [fullAddress, setFullAddress] = useState("");
+//Вид нотаріальної діяльності
   const [nameObj, setNameObj] = useState("");
-  const [kind, setKind] = useState("");
-  const [contacts, setContacts] = useState("");
+  const [rating, setRating] = useState("");
+  const [experience, setExperience] = useState("");
+  const [languages, setLanguages] = useState("");
+  const [accessibility, setAccessibility] = useState("");
+ 
 
-  const [areal, setAreal] = useState("");
+ 
+//графік
+  const [schedule, setSchedule] = useState("");
 
-  const [fullAddress, setFullAddress] = useState("");
-  const [shortAddress, setShortAddress] = useState("");
+  const [online, setOnline] = useState("");
+  const [urgent, setUrgent] = useState("");
+  const [reviews, setReviews] = useState("");
+  const [summons, setSummons] = useState("");
+  const [price, setPrice] = useState("");
+
+ 
+  
+
+  
+
+  
+  
   // const [ latitude, setLatitude] = useState("");
   // const [ longitude, setLongitude] = useState("");
 
@@ -83,7 +105,7 @@ const ForNotaries = () => {
       kind,
       contacts,
 
-      areal,
+      // areal,
 
       fullAddress,
       shortAddress,
@@ -130,20 +152,33 @@ const ForNotaries = () => {
     // setTodos("");
     setIsEdit("");
     setTempUuid("");
+    
+
     setAvatar("");
     setFio("");
     setLicense("");
+    setContacts("");
     setPost("");
     setDescription("");
-    setSchedule("");
+
     setRegion("");
     setCity("");
-    setNameObj("");
     setKind("");
-    setContacts("");
-    setAreal("");
-    setFullAddress("");
     setShortAddress("");
+    setFullAddress("");
+
+    setNameObj("");
+    setRating("");
+   
+    
+    setSchedule("");
+   
+    
+   
+    
+    // setAreal("");
+    
+    
   };
 
   //update
@@ -174,9 +209,7 @@ const ForNotaries = () => {
       <Container>
         <h2 class=" border__bottom pb-5">Для нотаріусів</h2>
 
-       
-
-        <div class="flex flex-col mt-5 gap-4">
+        <div class="flex flex-col mt-5 gap-4 text-base">
           {/* <input
         class=" border border-gray-500 p-2"
   type="text"
@@ -199,238 +232,290 @@ class=" border border-gray-500 p-2"
 /> */}
 
           <input
-            class=" border border-gray-500 p-2"
+          disabled
+            class="opacity-50 border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Логотип фото"
+            required
             value={avatar}
             onChange={(e) => setAvatar(e.target.value)}
           />
           <input
-            class=" border border-gray-500 p-2"
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="ФІП"
+            required
             value={fio}
             onChange={(e) => setFio(e.target.value)}
           />
           <input
-            class=" border border-gray-500 p-2"
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Ліцензія"
             value={license}
             onChange={(e) => setLicense(e.target.value)}
           />
           <input
-            class=" border border-gray-500 p-2"
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Контакти"
+            required
+            value={contacts}
+            onChange={(e) => setContacts(e.target.value)}
+          />
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Пошта"
+            required
             value={post}
             onChange={(e) => setPost(e.target.value)}
           />
+          {/* <input
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Телеграм"
+  required
+  value={region}
+  onChange={(e) => setRegion(e.target.value)}
+/> */}
           <textarea
-            class=" border border-gray-500 p-2"
+            class="  border resize-y border-gray-400 p-2 pl-4 rounded-[20px] focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Опис"
+            required
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
 
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Телеграм"
-  value={region}
-  onChange={(e) => setRegion(e.target.value)}
-/> */}
-
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Нотаріальні дії"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Важливі оновлення"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
           <input
-            class=" border border-gray-500 p-2"
-            type="text"
-            placeholder="ГРАФІК РОБОТИ"
-            value={schedule}
-            onChange={(e) => setSchedule(e.target.value)}
-          />
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Вдгуки клієнтів"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Статистика діяльності"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Промо-акції"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Корисні ресурси"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Сайт нотаріуса"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/> */}
-          <input
-            class=" border border-gray-500 p-2"
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Регіон"
+            required
             value={region}
             onChange={(e) => setRegion(e.target.value)}
           />
+
           <input
-            class=" border border-gray-500 p-2"
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Місто"
+            required
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-          <input
-            class=" border border-gray-500 p-2"
-            type="text"
-            placeholder="Вид нотаріальної діяльності"
-            value={nameObj}
-            onChange={(e) => setNameObj(e.target.value)}
-          />
-          <input
-            class=" border border-gray-500 p-2"
+
+          {/* <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Населений пункт"
+            required
+            value={areal}
+            onChange={(e) => setAreal(e.target.value)}
+          /> */}
+           <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Населений пункт"
+            required
             value={kind}
             onChange={(e) => setKind(e.target.value)}
           />
 
           <input
-            class=" border border-gray-500 p-2"
-            type="text"
-            placeholder="Контакти"
-            value={contacts}
-            onChange={(e) => setContacts(e.target.value)}
-          />
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Рейтинг користувачів
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Досвід роботи"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Мови спілкування"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Доступність для інвалідів"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Онлайн-послуги"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Термінові послуги"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Відгуки"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Виклик нотаріуса"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-          {/* <input
-class=" border border-gray-500 p-2"
-  type="text"
-  placeholder="Ціновий діапазон"
-  value={contacts}
-  onChange={(e) => setContacts(e.target.value)}
-/> */}
-
-          <input
-            class=" border border-gray-500 p-2"
-            type="text"
-            placeholder="Населений пункт"
-            value={areal}
-            onChange={(e) => setAreal(e.target.value)}
-          />
-
-          <input
-            class=" border border-gray-500 p-2"
-            type="text"
-            placeholder="Повна адреса"
-            value={fullAddress}
-            onChange={(e) => setFullAddress(e.target.value)}
-          />
-          <input
-            class=" border border-gray-500 p-2"
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
             type="text"
             placeholder="Адреса"
+            required
             value={shortAddress}
             onChange={(e) => setShortAddress(e.target.value)}
           />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Повна адреса"
+            required
+            value={fullAddress}
+            onChange={(e) => setFullAddress(e.target.value)}
+          />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Вид нотаріальної діяльності"
+            required
+            value={nameObj}
+            onChange={(e) => setNameObj(e.target.value)}
+          />
+
+
+
+          <input
+            disabled
+            class="opacity-50 border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Рейтинг користувачів"
+            required
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
+          />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Досвід роботи"
+            required
+            value={experience}
+            onChange={(e) => setExperience(e.target.value)}
+          />
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Мови спілкування"
+            required
+            value={languages}
+            onChange={(e) => setLanguages(e.target.value)}
+          />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Доступність для інвалідів"
+            required
+            value={accessibility}
+            onChange={(e) => setAccessibility(e.target.value)}
+          />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Графік роботи"
+            required
+            value={schedule}
+            onChange={(e) => setSchedule(e.target.value)}
+          />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Онлайн-послуги"
+            required
+            value={online}
+            onChange={(e) => setOnline(e.target.value)}
+          />
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Термінові послуги"
+            required
+            value={urgent}
+            onChange={(e) => setUrgent(e.target.value)}
+          />
+
+          <input
+            disabled
+            class="opacity-50  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Відгуки"
+            required
+            value={reviews}
+            onChange={(e) => setReviews(e.target.value)}
+          />
+
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Виклик нотаріуса"
+            required
+            value={summons}
+            onChange={(e) => setSummons(e.target.value)}
+          />
+
+          <input
+            disabled
+            class=" opacity-50 border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Ціновий діапазон"
+            required
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+
+          {/* <textarea
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Нотаріальні дії"
+  required
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/> */}
+          {/* <textarea
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Важливі оновлення"
+  required
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/> */}
+
           {/* <input
-class=" border border-gray-500 p-2"
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Вдгуки клієнтів"
+  required
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/> */}
+          {/* <input
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Статистика діяльності"
+  required
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/> */}
+          {/* <textarea
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Промо-акції"
+  required
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/> */}
+          {/* <input
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+  type="text"
+  placeholder="Корисні ресурси"
+  required
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/> */}
+          <input
+            class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
+            type="text"
+            placeholder="Сайт нотаріуса"
+            required
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+
+         
+
+          {/* <input
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
   type="text"
   placeholder=""
+  required
   value={latitude}
   onChange={(e) => setLatitude(e.target.value)}
 />
 <input
-class=" border border-gray-500 p-2"
+class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 focus:shadow-xl"
   type="text"
   placeholder=""
+  required
   value={longitude}
   onChange={(e) => setLongitude(e.target.value)}
 /> */}
@@ -445,7 +530,10 @@ class=" border border-gray-500 p-2"
           />
           {isEdit ? (
             <>
-              <button class="bg-slate-400 p-4 px-6 rounded" onClick={handleSubmitChange}>
+              <button
+                class="bg-slate-400 p-4 px-6 rounded"
+                onClick={handleSubmitChange}
+              >
                 Submit Change{" "}
               </button>
               <button
@@ -460,8 +548,11 @@ class=" border border-gray-500 p-2"
               </button>
             </>
           ) : (
-            <button class="bg-slate-400 hover:bg-slate-300 transition-all p-4 px-6 rounded" onClick={writeToDatabase}>
-              submit{" "}
+            <button
+              class="bg-[#45a057] text-white hover:text-black hover:bg-[#327e41]   transition-all p-4 px-6 rounded-full w-full lg:max-w-max lg:px-20 lg:ml-auto"
+              onClick={writeToDatabase}
+            >
+              Відправити{" "}
             </button>
           )}
         </div>
@@ -535,8 +626,6 @@ class=" border border-gray-500 p-2"
             )
           )}
         </ul> */}
-
-        
       </Container>
     </section>
   );
