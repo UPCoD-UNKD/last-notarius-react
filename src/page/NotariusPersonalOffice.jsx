@@ -28,16 +28,42 @@ const NotariusPersonalOffice = ({ notaries }) => {
   }
   
   const {
-    region,
-    nameObj,
-    // kind,
-    // contacts,
+
+    // avatar,
     fio,
     license,
-    areal,
-    // city,
-    // fullAddress,
-    shortAddress,
+    // contacts,
+    post,
+     description,
+    telegram,
+    viber,
+
+    region,
+     // city,   
+    // kind,
+     // fullAddress,
+     shortAddress,
+     nameObj,
+    rating,
+    expirience,
+    // language,
+    // accessibility,
+    worktime,
+    // onlineservices,
+    // urgentservices,
+    // reviews,
+    // summons,
+    // pricerange,
+    // notarialActions,
+    importantUpdates,
+    // statistic,
+    promotionalActions,
+    // usefulResources,
+    // website,
+   
+   
+   
+   
     // latitude,
     // longitude,
   } = notarius;
@@ -47,34 +73,35 @@ const NotariusPersonalOffice = ({ notaries }) => {
   const map2 =
     "!1m14!1m12!1m3!1d32257.47160492743!2d30.49221469769181!3d50.457551833063484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1695905368028!5m2!1sru!2sua";
   return (
-    <main class="min-h-[calc(100vh-200px)] py-10 mt-[-72px]">
+    <main class="min-h-[calc(100vh-200px)] py-20 lg:py-10 mt-[-72px]">
       <section class="  bg-white  ">
         <Container>
           <div class="lg:flex">
             <img
-              class="w-[150px] lg:w-[158px] h-auto mx-auto lg:h-[158px] "
+              class="  w-[150px] lg:w-[100px] h-auto mx-auto lg:h-[100px] "
               width={158}
               height={158}
               src={avatar}
               alt={id}
             />
 
-            <div class="pl-10">
-              <div class="mt-5  flex  xl:mt-0">
+            <div class="lg:pl-10">
+              <div class="mt-5  lg:flex  xl:mt-0">
                 <h2
-                  class="text-[24px] px-5 
+                  class="text-[24px] px-5 text-center 
                 font-medium lg:px-0 lg:text-[28px]  
                "
                 >
                   {fio}
                 </h2>
 
-                <button
-                  type="button"
+                <a
+                href={post}
+                 
                   class="  sm:max-w-max sm:mx-auto mt-10 flex   items-center rounded-full gap-2 justify-center w-full
                p-2 px-10 bg-accent1 hover:bg-[#607DBE]/50 transition-all  border border-slate-500 text-white
-               lg:col-start-3 lg:row-start-3  lg:mt-0  
-               xl:col-start-3 xl:row-start-2 xl:mr-0
+               lg:col-start-3 lg:row-start-3  lg:mt-0  lg:px-4
+               xl:col-start-3 xl:row-start-2 xl:mr-0 xl:px-10
                "
                 >
                   <svg
@@ -89,10 +116,10 @@ const NotariusPersonalOffice = ({ notaries }) => {
                     />
                   </svg>
                   Зворотній зв’язок
-                </button>
+                </a>
               </div>
 
-              <div class="flex mt-5 lg:mt-2 gap-5">
+              <div class="lg:flex mt-5 lg:mt-2 gap-5">
                 <p class="text-base w-[150px]  xl:text-[14px] ">{nameObj}</p>
 
                 <div
@@ -100,7 +127,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
                lg:mt-0  
                "
                 >
-                  <p class="text-[14px]">Відгуків клієнтів </p>
+                  <p class="text-[14px]">Відгуків клієнтів  </p>
 
                   <div class=" flex items-center gap-1 ">
                     {Array.from({ length: 5 }, (_, index) => index).map(
@@ -120,10 +147,11 @@ const NotariusPersonalOffice = ({ notaries }) => {
                           </svg>
                         </div>
                       )
-                    )}
-                    <span class=" ml-3 mr-2 rounded text-base   font-normal leading-[1.2] dark:bg-blue-200 dark:text-blue-800">
+                    )} 
+                    {/* <span class=" ml-3 mr-2 rounded text-base   font-normal leading-[1.2] dark:bg-blue-200 dark:text-blue-800">
                       {}
-                    </span>
+                    </span> */}
+                    <span class="ml-2 font-semibold">{rating}</span>
                   </div>
                 </div>
 
@@ -133,7 +161,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
               xl:mt-0"
                 >
                   <p class="text-[14px]">
-                    Досвід роботи: <span class="font-semibold ml-2">{"5"}</span>{" "}
+                    Досвід роботи: <span class="font-semibold ml-2">{expirience}</span>{" "}
                     років
                   </p>
                   <p class="text-[14px]">
@@ -149,11 +177,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
                 </h2>
 
                 <p class="text-[14px]  mt-5 ">
-                  Нотаріус за операціями з нерухомістю перевіряє документи
-                  учасників правочину, право власності на нерухомість,
-                  організовує процедуру здійснення купівлі-продажу та
-                  взаєморозрахунків, забезпечує гарантії права власності шляхом
-                  внесення даних до державного реєстру.
+                  {description}
                 </p>
                 <p class="text-[14px]  mt-5">
                   Договори купівлі, продажу, дарування, дарча, довіреності,
@@ -171,27 +195,30 @@ const NotariusPersonalOffice = ({ notaries }) => {
             <div class="flex flex-col justify-between ">
               <div class=" ">
                 <div class="flex flex-col text-base  gap-2">
-                  <p>Адреса:</p>
-                  <p>
-                    {region} {areal}
-                  </p>
+                  <p>Адреса: <span class="ml-2">{region}</span>  </p>
+                  
                   <p>{shortAddress}</p>
                 </div>
 
                 <div class="flex justify-center gap-5 mt-5 lg:justify-start lg:mt-10">
+                  <a href={telegram}>
                   <IconTelegram />
+                  </a>
+
+                  <a href={viber}>
                   <IconViber />
+                  </a>
                 </div>
               </div>
 
-              <button
-                type="button"
+              <a
+                href={post}
                 class="  lg:max-w-max mt-5 flex  sm:max-w-max sm:mx-auto items-center rounded-full gap-2 justify-center w-full 
                 p-2 px-10 bg-accent1 hover:bg-accent1/70 transition-all  text-white  
                 lg:ml-0"
               >
                 Запис на консультацію
-              </button>
+              </a>
             </div>
             <iframe
               class=" h-[200px] lg:ml-auto lg:w-[100%] lg:h-[250px]   border border-black/30 "
@@ -279,10 +306,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
             </h3>
             <div class="lg:basis-[75%] lg:pl-10">
               <p class="text-[14px] pt-10   lg:indent-8 xl:text-base lg:pt-0 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                necessitatibus voluptatem fuga obcaecati commodi aperiam iusto
-                repellat consequatur tempora veritatis numquam corrupti,
-                blanditiis aliquam rerum laborum, eaque nemo sunt eum.
+                {importantUpdates}
               </p>
 
               <p class="text-[14px] pt-5 pb-10  xl:text-base">
@@ -301,7 +325,8 @@ const NotariusPersonalOffice = ({ notaries }) => {
 
               <ul class="marker:text-black/30 list-disc pl-5 space-y-3 mt-5 ">
                 <li>
-                  Робочі дні: з {" 08:00"} до {"19:00"}
+                  {/* Робочі дні: з {" 08:00"} до {"19:00"} */}
+                  Робочі дні: з {worktime}
                 </li>
                 <li>
                   Субота: з {" 10:00"} до {"15:00"}
@@ -320,7 +345,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
       >
         {/* <div class="   absolute   top-0    w-full   inset-0  bg-black/[57%] "></div> */}
         <div class="flex flex-col justify-center gap-10 z-[1]">
-          <h1 class="text-[32px] font-semibold text-white">
+          <h1 class="text-[32px] font-semibold text-white text-center">
             РЕЄСТР НОТАРІУСІВ УКРАЇНИ
           </h1>
           <p class="text-white text-[20px] font-semibold text-center">
@@ -337,7 +362,8 @@ const NotariusPersonalOffice = ({ notaries }) => {
 
           <MessageDialogForm />
 
-          <Stat />
+          {/* <Stat statistic={statistic} /> */}
+          <Stat  />
 
           
           <div class="lg:flex mt-10 xl:mt-20 border__top pt-5 lg:pt-10">
@@ -346,10 +372,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
             </h3>
             <div class="lg:basis-[75%] lg:pl-10">
               <p class="text-[14px] pt-10   lg:indent-8 xl:text-base lg:pt-0 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                necessitatibus voluptatem fuga obcaecati commodi aperiam iusto
-                repellat consequatur tempora veritatis numquam corrupti,
-                blanditiis aliquam rerum laborum, eaque nemo sunt eum.
+                {promotionalActions}
               </p>
 
               <p class="text-[14px] pt-5 pb-10  xl:text-base">

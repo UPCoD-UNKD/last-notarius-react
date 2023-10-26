@@ -4,7 +4,7 @@ import React from 'react';
 // export default function SearchBasicExample(): JSX.Element {
 export default function SearchForm() {
     return (
-            <div class="w-full sm:w-[200px]  ">
+            <div class="w-full lg:w-[100px]  xl:w-[200px] ">
                 <div class="relative  flex w-full flex-wrap items-stretch  ">
                     {/* rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding -mr-0.5 block focus:border-primary dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary  focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)]*/}
                     <input

@@ -69,9 +69,9 @@ const Header = () => {
      `}>
       <Container class="">
         {/* lg:justify-normal */}
-        <div class="flex items-center justify-between  lg:justify-between border-b border-b-white py-4">
+        <div class="flex items-center justify-between  lg:justify-between lg:border-b lg:border-b-white py-4 ">
           {/*  */}
-          <Link to="/" class=" w-[200px] h-auto  hover:scale-95 transition-all">
+          <Link to="/" class=" w-[200px] h-auto  hover:scale-95 transition-all lg:w-[125px]">
             {/* <span class="text-2xl text-white font-bold border-b-4 border-b-blue-800 ">
               е-Нотаріус
             </span> */}
@@ -80,7 +80,7 @@ const Header = () => {
 
           <div class={`  lg:block ${isShown ? "block absolute top-[54px] left-0 w-full h-screen bg-bgDark z-[5] p-10 transition-all text-[20px] text-white/70 hover:text-white  " : "hidden"} `} >
             {/* lg:ml-10  xl:ml-60*/}
-            <div class="  flex flex-col lg:flex-row  gap-5 xl:gap-8 text-[9px] lg:text-[11px] text-white  uppercase"
+            <div class="  flex flex-col lg:flex-row  gap-5 xl:gap-8 text-[12px]  lg:text-[11px] text-white  uppercase"
             onClick={() => {
               if(window.innerWidth < 768 ){
                 setIsShown(!isShown);

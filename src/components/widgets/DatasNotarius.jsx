@@ -102,27 +102,53 @@ const DatasNotarius = ({
         </div>
       </div>
 
-      <ul class="custom__scrollbar2 relative mt-5     text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
+      <ul class="custom__scrollbar2 relative mt-5  bg-[#eaeaea] rounded-tl-[20px] rounded-tr-[30px]  rounded-bl-[20px] rounded-br-[30px] text-main min-h-[calc(100vh)] xl:h-[1195px] overflow-y-scroll  ">
       
       {/* {notaryData.notaries.map(({ */}
       {filteredData.map(({
         
         id,
         todo,
-            region,
-            nameObj,
-            kind,
-            contacts,
-            fio,
-            license,
-            areal,
-            city,
-            fullAddress,
-            shortAddress,
-            latitude,
-            longitude,}
-            ) => (
-         
+
+        // avatar,
+        fio,
+        license,
+        contacts,
+        post,
+        description,
+        // telegram,
+        // viber,
+
+        region,
+        city,        
+        kind,
+        fullAddress,
+        shortAddress,        
+        nameObj,
+        rating,
+        expirience,
+        language,
+        accessibility,
+        worktime,
+        onlineservices,
+        urgentservices,
+        reviews,
+        summons,
+        pricerange,
+        notarialActions,
+        importantUpdates,
+        statistic,
+        promotionalActions,
+        usefulResources,
+        website,
+
+        // areal,
+        
+        
+        latitude,
+        longitude,}
+        ) => (
+      
             
 
               
@@ -134,7 +160,7 @@ const DatasNotarius = ({
            
             <li
               key={id}
-              class="px-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5 border-l  border-l-slate-400 border-t border-t-slate-400 "
+              class="px-5  grid lg:grid-cols-[70%_1fr] justify-between py-4 bg-white lg:py-4 lg:pb-5  border-t border-t-slate-400  shadow-[inset_0_-51px_75px_-24px_rgba(0,0,0,0.1)] rounded-t-[20px]"
             >
               
 
@@ -165,13 +191,14 @@ const DatasNotarius = ({
 
                     <div class="hidden lg:block">
                       <div class="mt-4 flex flex-col text-xs ">
-                        <span>
-                          Адреса: {region} {areal}
+                        <span >
+                          {/* Адреса: {region} {areal} */}
+                          Адреса: <span class="mx-1">{region} </span>  {kind} {city}
                         </span>
                       
 
                         <div class="mt-4 flex flex-col gap-3 justify-between ">
-                          <p class="text-xs">Відгукі клієнтів </p>
+                          <p class="text-xs">Відгукі клієнтів -  <span class="font-bold">{rating}</span> </p>
 
                           <div class=" flex items-center gap-1 ">
                             {Array.from({ length: 5 }, (_, index) => index).map(
@@ -209,10 +236,10 @@ const DatasNotarius = ({
 
               <div class=" text-sm flex flex-col justify-between  ml-auto">
                 <p class="">
-                  Досвід роботи: <span class="font-semibold">{"5"}</span> років
+                  Досвід роботи: <span class="ml-1 font-semibold">{expirience}</span> років
                 </p>
                 <p class="">
-                  Номер ліцензії: <span class="font-semibold">{license}</span>{" "}
+                  Номер ліцензії: <span class="ml-1 font-semibold">{license}</span>{" "}
                 </p>
                 <NavLink to={`${id}`}>
                 <button
