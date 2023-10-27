@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a6372ce.css",
+    "main.js": "/static/js/main.938789f2.js",
+    "static/js/787.091a7645.chunk.js": "/static/js/787.091a7645.chunk.js",
+    "static/media/hero-01-1280@2x.jpg": "/static/media/hero-01-1280@2x.7a5d49f61403b504c0c6.jpg",
+    "static/media/perconal-office-1280@2x.jpg": "/static/media/perconal-office-1280@2x.0d73068fa1bfea354b5c.jpg",
+    "static/media/personal-img-02-1280.jpg": "/static/media/personal-img-02-1280.828f791568f39a480eba.jpg",
+    "static/media/avatar-02.png": "/static/media/avatar-02.f363899040d0fcda37e4.png",
+    "index.html": "/index.html",
+    "main.9a6372ce.css.map": "/static/css/main.9a6372ce.css.map",
+    "main.938789f2.js.map": "/static/js/main.938789f2.js.map",
+    "787.091a7645.chunk.js.map": "/static/js/787.091a7645.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a6372ce.css",
+    "static/js/main.938789f2.js"
+  ]
+}
