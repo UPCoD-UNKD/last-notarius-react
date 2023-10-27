@@ -1,0 +1,40 @@
+{
+  "short_name": "e-Нотаріус",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "16x16",
+      "type": "image/svg"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "24x24",
+      "type": "image/svg"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "32x32",
+      "type": "image/svg"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "64x64",
+      "type": "image/svg"
+    },
+    {
+      "src": "favicon_01.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon_01.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

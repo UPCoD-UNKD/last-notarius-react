@@ -49,6 +49,7 @@ const ForNotaries = () => {
   const [reviews, setReviews] = useState("");
   const [summons, setSummons] = useState("");
   const [price, setPrice] = useState("");
+  const [website, setWebsite] = useState("");
 
  
   
@@ -160,6 +161,7 @@ const ForNotaries = () => {
     setContacts("");
     setPost("");
     setDescription("");
+    
 
     setRegion("");
     setCity("");
@@ -169,9 +171,18 @@ const ForNotaries = () => {
 
     setNameObj("");
     setRating("");
+    setExperience("");
+    setLanguages("");
+    setAccessibility("");
    
     
     setSchedule("");
+    setOnline("");
+    setUrgent("");
+    setReviews("");
+    setSummons("");
+    setPrice("");
+    setWebsite("");
    
     
    
@@ -205,11 +216,11 @@ const ForNotaries = () => {
   // };
 
   return (
-    <section class="bg-white mt-[-72px] text-center text-xl font-semibold min-h-[calc(100vh-200px)] w-full py-10">
+    <section class="bg-white mt-[-72px] text-center text-xl font-semibold min-h-[calc(100vh-200px)] w-full py-10 xl:py-20">
       <Container>
         <h2 class=" border__bottom pb-5">Для нотаріусів</h2>
 
-        <div class="flex flex-col mt-5 gap-4 text-base">
+        <div class="flex flex-col mt-5 gap-4 text-base lg:mt-10 lg:max-w-[500px] lg:mx-auto xl:max-w-[600px]">
           {/* <input
         class=" border border-gray-500 p-2"
   type="text"
@@ -497,8 +508,8 @@ class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:b
             type="text"
             placeholder="Сайт нотаріуса"
             required
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
           />
 
          
@@ -549,7 +560,7 @@ class="  border border-gray-400 p-2 pl-4 rounded-full focus:outline-none focus:b
             </>
           ) : (
             <button
-              class="bg-[#45a057] text-white hover:text-black hover:bg-[#327e41]   transition-all p-4 px-6 rounded-full w-full lg:max-w-max lg:px-20 lg:ml-auto"
+              class=" mx-auto  bg-[#45a057] text-white hover:text-black hover:bg-[#327e41]   transition-all p-3 px-6 rounded-full w-full lg:max-w-max lg:px-20"
               onClick={writeToDatabase}
             >
               Відправити{" "}

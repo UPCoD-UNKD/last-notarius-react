@@ -96,7 +96,7 @@ const NotariusPersonalOffice = ({ notaries }) => {
                 </h2>
 
                 <a
-                href={post}
+                href={`mailto:${post}`}
                  
                   class="  sm:max-w-max sm:mx-auto mt-10 flex   items-center rounded-full gap-2 justify-center w-full
                p-2 px-10 bg-accent1 hover:bg-[#607DBE]/50 transition-all  border border-slate-500 text-white
